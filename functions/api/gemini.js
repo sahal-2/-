@@ -5,9 +5,11 @@
 // الإعدادات في Cloudflare > Workers & Pages > المشروع > Settings:
 //   Variables and Secrets: GEMINI_API_KEY (إجباري، Secret) — TEAM_PASSWORD (اختياري)
 //   Bindings: Workers AI باسم  AI   (مطلوب للاحتياطي المجاني بس)
+//   GROQ_API_KEY (اختياري، Secret): احتياطي تالت مجاني من console.groq.com لو Gemini و Workers AI الاتنين وقعوا
 const GEMINI_RX = /^gemini-[a-z0-9.\-]+$/i;
 // الموديلات المسموحة على Workers AI بس (عشان محدش يشغّل موديل غالي من بره الحد المجاني)
 const CF_MODELS = new Set(["@cf/google/gemma-4-26b-a4b-it", "@cf/openai/gpt-oss-120b"]);
+const GROQ_MODELS = new Set(["openai/gpt-oss-120b", "qwen/qwen3.8-27b"]);
 const json = (obj, status = 200) =>
   new Response(JSON.stringify(obj), { status, headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
 
@@ -24,6 +26,12 @@ export async function onRequestPost({ request, env }) {
       const p = await request.json(); // older app versions send {model, body}
       model = (p && p.model) || "";
       payload = new TextEncoder().encode(JSON.stringify((p && p.body) || {})).buffer;
+    }
+
+    if (model.startsWith("groq:")) {
+      const m = model.slice(5);
+      if (!GROQ_MODELS.has(m)) return json({ error: { message: "bad model" } }, 400);
+      return await groqAI(m, payload, env);
     }
 
     if (model.startsWith("@cf/")) {
@@ -58,7 +66,7 @@ export async function onRequestPost({ request, env }) {
 }
 
 export function onRequestGet({ env }) {
-  return json({ ok: true, gemini: !!env.GEMINI_API_KEY, workersAI: !!env.AI });
+  return json({ ok: true, gemini: !!env.GEMINI_API_KEY, workersAI: !!env.AI, groq: !!env.GROQ_API_KEY });
 }
 
 /* ---------------- Cloudflare Workers AI (الاحتياطي المجاني) ---------------- */
@@ -73,7 +81,7 @@ async function readPage(url) {
     const r = await fetch(url, {
       signal: ctrl.signal,
       redirect: "follow",
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; SahlPlans/1.0)", "Accept-Language": "ar,en;q=0.8" },
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; SheraaPlans/1.0)", "Accept-Language": "ar,en;q=0.8" },
     });
     clearTimeout(t);
     if (!r.ok) return "";
@@ -115,8 +123,7 @@ function aiText(r) {
   return "";
 }
 
-async function workersAI(model, payload, env) {
-  if (!env.AI) return json({ error: { message: "Workers AI binding (AI) is not set in Cloudflare" } }, 501);
+async function buildMessages(payload) {
   const body = JSON.parse(new TextDecoder().decode(payload) || "{}");
   const gc = body.generationConfig || {};
 
@@ -140,7 +147,12 @@ async function workersAI(model, payload, env) {
         : `\n\n(مقدرناش نفتح الرابط ${m[0]} — اعتمد على الرابط والمعلومات المتاحة فقط ولا تخترع.)`;
     }
   }
+  return { messages, gc };
+}
 
+async function workersAI(model, payload, env) {
+  if (!env.AI) return json({ error: { message: "Workers AI binding (AI) is not set in Cloudflare" } }, 501);
+  const { messages, gc } = await buildMessages(payload);
   const max = Math.min(Number(gc.maxOutputTokens) || 4096, 16000);
   let r;
   try {
@@ -154,4 +166,39 @@ async function workersAI(model, payload, env) {
   const text = aiText(r).trim();
   if (!text) return json({ error: { message: "Workers AI returned empty text" } }, 503);
   return json({ candidates: [{ content: { role: "model", parts: [{ text }] }, finishReason: "STOP" }], modelVersion: model });
+}
+
+/* ---------------- Groq (احتياطي تالت مجاني، اختياري) ---------------- */
+// الحد المجاني بتاع Groq صغير (حوالي 8 آلاف توكن في الدقيقة و200 ألف في اليوم)، فهو آخر حل بس
+async function groqAI(model, payload, env) {
+  if (!env.GROQ_API_KEY) return json({ error: { message: "GROQ_API_KEY is not set in Cloudflare" } }, 501);
+  const { messages, gc } = await buildMessages(payload);
+  const req = { model, messages, max_tokens: Math.min(Number(gc.maxOutputTokens) || 4096, 6000), temperature: typeof gc.temperature === "number" ? gc.temperature : 0.6 };
+  if (model.startsWith("openai/gpt-oss")) req.reasoning_effort = "low";
+  let r;
+  try {
+    r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer " + env.GROQ_API_KEY },
+      body: JSON.stringify(req),
+    });
+  } catch (e) {
+    return json({ error: { message: "Groq: " + String((e && e.message) || e).slice(0, 160) } }, 503);
+  }
+  const raw = await r.text();
+  let data = {};
+  try { data = JSON.parse(raw); } catch (e) {}
+  if (!r.ok) {
+    const msg = String((data.error && data.error.message) || raw || r.status).slice(0, 220);
+    if (r.status === 429) {
+      if (/per day|TPD|RPD/i.test(msg)) return json({ error: { message: "Groq daily limit: " + msg } }, 429);
+      const ra = Number(r.headers.get("retry-after")) || Number((/try again in ([\d.]+)s/i.exec(msg) || [])[1]) || 8;
+      return json({ error: { message: "Groq rate limit, retry in " + Math.ceil(ra) + "s" } }, 429);
+    }
+    if (r.status === 401) return json({ error: { message: "Groq key rejected (GROQ_API_KEY)" } }, 501);
+    return json({ error: { message: "Groq: " + msg } }, r.status >= 500 ? 503 : r.status === 404 ? 404 : 503);
+  }
+  const text = aiText(data).trim();
+  if (!text) return json({ error: { message: "Groq returned empty text" } }, 503);
+  return json({ candidates: [{ content: { role: "model", parts: [{ text }] }, finishReason: "STOP" }], modelVersion: "groq:" + model });
 }

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الخطة التسويقية الشاملة — متجر كوزي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F0C0B;
+    --surface:#181110;
+    --surface-2:#101922;
+    --text:#F4F1E3;
+    --text-muted:#78ADD8;
+    --text-dim:#7A6F65;
+    --accent:#2794EE;
+    --accent-soft:rgba(39,148,238,0.14);
+    --line:rgba(244,241,227,0.12);
+    --line-strong:rgba(244,241,227,0.22);
+    --font-display:'Lalezar', sans-serif;
+    --font-body:'IBM Plex Sans Arabic', sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F0C0B; --surface:#181110; --surface-2:#101922; --text:#F4F1E3;
+      --text-muted:#78ADD8; --text-dim:#7A6F65; --accent:#2794EE;
+      --accent-soft:rgba(39,148,238,0.14); --line:rgba(244,241,227,0.12); --line-strong:rgba(244,241,227,0.22);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F0C0B; --surface:#181110; --surface-2:#101922; --text:#F4F1E3;
+    --text-muted:#78ADD8; --text-dim:#7A6F65; --accent:#2794EE;
+    --accent-soft:rgba(39,148,238,0.14); --line:rgba(244,241,227,0.12); --line-strong:rgba(244,241,227,0.22);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-weight:400;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent); color:#fff;}
+
+  a{color:var(--accent); text-decoration:none;}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:88px 0 64px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .hero-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; color:var(--text-muted);
+    padding:6px 14px; border:1px solid var(--line-strong); border-radius:999px;
+    margin-bottom:28px;
+  }
+  .hero-tag i{width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block;}
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:400;
+    font-size:clamp(46px, 8vw, 84px);
+    line-height:1.05;
+    margin:0 0 20px;
+    letter-spacing:0.5px;
+  }
+  .hero h1 span{color:var(--accent);}
+  .hero p.lead{
+    font-size:19px;
+    color:var(--text-muted);
+    max-width:600px;
+    margin:0;
+  }
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-top:40px;
+  }
+  .chip{
+    font-size:14px; color:var(--text);
+    background:var(--surface); border:1px solid var(--line);
+    padding:9px 16px; border-radius:8px;
+  }
+
+  /* ===== SECTION SHELL ===== */
+  section{padding:72px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{margin-bottom:40px;}
+  .section-num{
+    font-family:var(--font-display);
+    color:var(--accent);
+    font-size:16px;
+    display:block;
+    margin-bottom:10px;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-weight:400;
+    font-size:clamp(30px,4.5vw,44px);
+    margin:0 0 12px;
+    line-height:1.15;
+  }
+  .section-head p{
+    color:var(--text-muted);
+    font-size:16px;
+    max-width:640px;
+    margin:0;
+  }
+
+  /* ===== AUDIT GRID ===== */
+  .audit-grid{display:grid; grid-template-columns:1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .audit-item{background:var(--bg); padding:24px; border-right:3px solid var(--accent);}
+  .audit-item h3{margin:0 0 6px; font-size:16px; font-weight:600;}
+  .audit-item .now{color:var(--text-muted); font-size:14.5px; margin:0 0 10px;}
+  .audit-item .opp{color:var(--text); font-size:14.5px; margin:0; padding-top:10px; border-top:1px dashed var(--line);}
+  .audit-item .opp b{color:var(--accent); font-weight:600;}
+
+  .verdict{
+    margin-top:32px; padding:22px 24px;
+    background:var(--surface); border-radius:4px;
+    font-size:15.5px; color:var(--text-muted);
+  }
+  .verdict b{color:var(--text); font-weight:600;}
+
+  /* ===== KEYWORD LAYERS ===== */
+  .layers{display:flex; flex-direction:column; gap:14px; margin-top:8px;}
+  .layer{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 22px;
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:18px;
+    align-items:start;
+  }
+  .layer .lname{font-weight:600; font-size:15px; color:var(--accent);}
+  .layer .lbody p{margin:0 0 6px; font-size:14.5px;}
+  .layer .lbody .ex{color:var(--text-muted); font-size:13.5px;}
+
+  /* ===== SUBSECTIONS ===== */
+  .sub{margin-top:44px;}
+  .sub h3{
+    font-size:20px; font-weight:600; margin:0 0 16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .sub h3::before{content:""; width:18px; height:2px; background:var(--accent); display:inline-block;}
+  ul.plain{margin:0; padding:0; list-style:none;}
+  ul.plain li{
+    padding:13px 0 13px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px; color:var(--text-muted);
+    display:flex; gap:12px;
+  }
+  ul.plain li:last-child{border-bottom:none;}
+  ul.plain li::before{content:"—"; color:var(--accent); flex-shrink:0;}
+  ul.plain li b{color:var(--text); font-weight:600;}
+
+  /* ===== PILLARS ===== */
+  .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px;}
+  .pillar{background:var(--bg); padding:22px;}
+  .pillar .pn{font-family:var(--font-display); color:var(--accent); font-size:22px; display:block; margin-bottom:10px;}
+  .pillar h4{margin:0 0 6px; font-size:15px; font-weight:600;}
+  .pillar p{margin:0; font-size:13.5px; color:var(--text-dim);}
+
+  /* ===== SCHEDULE TABLE ===== */
+  .table-scroll{overflow-x:auto; margin-top:8px; border:1px solid var(--line); border-radius:6px;}
+  table{width:100%; border-collapse:collapse; min-width:560px;}
+  th,td{padding:14px 16px; text-align:right; font-size:14px;}
+  thead th{
+    background:var(--surface-2); color:var(--text-muted);
+    font-weight:600; font-size:13.5px;
+    border-bottom:1px solid var(--line-strong);
+  }
+  tbody td{border-bottom:1px solid var(--line); color:var(--text-muted);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody td:first-child{color:var(--text); font-weight:600;}
+
+  /* ===== INFLUENCER TIERS ===== */
+  .tiers{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px;}
+  .tier{background:var(--bg); padding:20px 22px; display:grid; grid-template-columns:1fr 120px 2fr; gap:16px; align-items:center;}
+  .tier .tname{font-weight:700; font-size:15px;}
+  .tier .trange{color:var(--accent); font-size:14px; font-weight:600; text-align:center;}
+  .tier .trole{color:var(--text-muted); font-size:14px;}
+
+  .models{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:8px;}
+  .model-card{background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:20px;}
+  .model-card h4{margin:0 0 8px; font-size:15px; font-weight:600; color:var(--accent);}
+  .model-card p{margin:0; font-size:14px; color:var(--text-muted);}
+
+  /* ===== TIMELINE (genuinely sequential) ===== */
+  .timeline{display:flex; flex-direction:column; margin-top:16px;}
+  .tstep{
+    display:grid; grid-template-columns:90px 1fr; gap:24px;
+    padding:28px 0; border-bottom:1px solid var(--line);
+  }
+  .tstep:last-child{border-bottom:none;}
+  .tstep .tnum{font-family:var(--font-display); font-size:48px; color:var(--accent); line-height:1;}
+  .tstep h4{margin:0 0 6px; font-size:17px; font-weight:600;}
+  .tstep .weeks{color:var(--text-dim); font-size:13px; margin:0 0 10px;}
+  .tstep p.desc{margin:0; color:var(--text-muted); font-size:14.5px; max-width:560px;}
+
+  /* ===== KPI ===== */
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px;}
+  .kpi{background:var(--bg); padding:22px;}
+  .kpi h4{margin:0 0 8px; font-size:14.5px; font-weight:600; color:var(--accent);}
+  .kpi p{margin:0; font-size:13.5px; color:var(--text-muted); line-height:1.7;}
+
+  /* ===== CLOSING ===== */
+  .closing{padding:80px 0 100px;}
+  .closing .mark{font-family:var(--font-display); font-size:15px; color:var(--accent); display:block; margin-bottom:18px;}
+  .closing p{font-size:18px; color:var(--text-muted); max-width:680px; margin:0; line-height:1.85;}
+  .closing p b{color:var(--text); font-weight:600;}
+
+  footer{padding:32px 0 60px; color:var(--text-dim); font-size:13px; text-align:center;}
+
+  @media (max-width:640px){
+    .hero{padding:64px 0 48px;}
+    section{padding:52px 0;}
+    .layer{grid-template-columns:1fr;}
+    .tier{grid-template-columns:1fr; gap:6px;}
+    .tier .trange{text-align:right;}
+    .tstep{grid-template-columns:56px 1fr; gap:16px;}
+    .tstep .tnum{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="hero-tag"><i></i> استشارة تسويقية · koziksa.com</div>
+    <h1>خطة كوزي<br>ال<span>تسويقية</span> الشاملة</h1>
+    <p class="lead">رؤية متكاملة لبناء حضور رقمي فخم لمتجر التيشرتات القطنية — من الظهور في نتائج البحث، إلى السوشيال ميديا، إلى شراكات المؤثرين.</p>
+    <div class="hero-meta">
+      <span class="chip">تحسين محركات البحث SEO</span>
+      <span class="chip">السوشيال ميديا</span>
+      <span class="chip">تسويق المؤثرين</span>
+      <span class="chip">خطة تنفيذ 90 يوم</span>
+    </div>
+  </section>
+
+  <section id="audit">
+    <div class="section-head">
+      <span class="section-num">القسم الأول</span>
+      <h2>تشخيص الوضع الحالي</h2>
+      <p>معاينة فعلية للمتجر كشفت عن فجوة واضحة بين جودة المنتج وحجم الحضور الرقمي.</p>
+    </div>
+
+    <div class="audit-grid">
+      <div class="audit-item">
+        <h3>المنصة</h3>
+        <p class="now">متجر على سلة بثيم ANGEL — بنية تقنية سليمة.</p>
+        <p class="opp">تحتاج ضبط SEO يدوي لأن سلة تدير الإعدادات <b>تلقائيًا وبشكل عام</b>.</p>
+      </div>
+      <div class="audit-item">
+        <h3>المنتج</h3>
+        <p class="now">تيشرتات أنمي، ديزني، هوليوود، ستريت وير، دول ومدن، اقتباسات.</p>
+        <p class="opp">تنويع يفتح باب <b>استهداف شرائح متعددة</b> بمحتوى مخصص لكل فئة.</p>
+      </div>
+      <div class="audit-item">
+        <h3>الميتا داتا</h3>
+        <p class="now">الوصف والعنوان عامّان جدًا — "متجر كوزي لبيع التيشرتات القطنية".</p>
+        <p class="opp">فرصة ذهبية غير مستغلة <b>لكلمات مفتاحية طويلة الذيل</b>.</p>
+      </div>
+      <div class="audit-item">
+        <h3>السوشيال ميديا</h3>
+        <p class="now">لا يوجد حساب رسمي واضح ومرتبط بالموقع بقوة.</p>
+        <p class="opp">فرصة بناء حضور من الصفر <b>باستراتيجية مدروسة</b> بدل نشر عشوائي.</p>
+      </div>
+      <div class="audit-item">
+        <h3>الدليل الاجتماعي</h3>
+        <p class="now">تقييمات عملاء حقيقية من مدن متعددة: القصيم، جدة، الرياض، الطائف، أبها.</p>
+        <p class="opp"><b>كنز محتوى UGC</b> جاهز للاستثمار في السوشيال وحملات المؤثرين.</p>
+      </div>
+      <div class="audit-item">
+        <h3>الثقة</h3>
+        <p class="now">متجر موثّق رسميًا في منصة الأعمال السعودية.</p>
+        <p class="opp">نقطة قوة يجب <b>إبرازها في كل قناة تسويقية</b>.</p>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <b>الخلاصة:</b> المنتج قوي ومتنوع والثقة التقنية موجودة، لكن الحضور الرقمي غير مستثمر بالشكل الذي يليق بجودة المتجر. هذه الخطة تبني حضورًا متماسكًا عبر ثلاثة محاور مترابطة.
+    </div>
+  </section>
+
+  <section id="seo">
+    <div class="section-head">
+      <span class="section-num">القسم الثاني</span>
+      <h2>محور السيو</h2>
+      <p>ثلاث طبقات عمل: البنية التقنية، المحتوى والكلمات المفتاحية، والروابط الخارجية.</p>
+    </div>
+
+    <div class="sub">
+      <h3>السيو التقني</h3>
+      <ul class="plain">
+        <li><b>الميتا تاجز:</b> تخصيص Title وDescription لكل قسم ومنتج بدل النص العام الموحّد.</li>
+        <li><b>بنية الروابط:</b> توحيد استخدام الشرطات وتجنب الرموز الغريبة في المعرّفات.</li>
+        <li><b>سرعة الموقع:</b> ضغط الصور بصيغة WebP وتفعيل التحميل الكسول للبنرات الثقيلة.</li>
+        <li><b>الفهرسة:</b> تقديم sitemap.xml في Search Console وربط GTM بأهداف تحويل واضحة.</li>
+        <li><b>Schema Markup:</b> إضافة Product Schema وFAQ Schema للأسئلة الشائعة الموجودة فعليًا بالموقع.</li>
+        <li><b>الروابط الداخلية:</b> ربط كل تصنيف منتج بمقالات مدونة متعلقة به.</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h3>استراتيجية الكلمات المفتاحية</h3>
+      <div class="layers">
+        <div class="layer">
+          <div class="lname">كلمات عامة</div>
+          <div class="lbody">
+            <p>تيشرتات قطنية، متجر تيشرتات اونلاين السعودية</p>
+            <p class="ex">حجم بحث عالٍ، منافسة عالية</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="lname">كلمات تصنيفية</div>
+          <div class="lbody">
+            <p>تيشرت انمي رجالي، تيشرت ديزني اوفرسايز، تيشرت اقتباسات عربي</p>
+            <p class="ex">حجم بحث متوسط، منافسة متوسطة — هنا الفرصة الحقيقية</p>
+          </div>
+        </div>
+        <div class="layer">
+          <div class="lname">طويلة الذيل</div>
+          <div class="lbody">
+            <p>وين اشتري تيشرت اوفرسايز اصلي جدة، تيشرت انمي ناروتو اصلي السعودية</p>
+            <p class="ex">منافسة منخفضة، نية شراء عالية جدًا</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>خطة مدونة مقترحة</h3>
+      <ul class="plain">
+        <li>دليل مقاسات التيشرت الأوفرسايز: كيف تختار مقاسك الصح؟</li>
+        <li>أفضل 10 تصاميم أنمي رائجة في 2026</li>
+        <li>تيشرتات دول ومدن: كيف تعبّر عن ذوقك بالسفر؟</li>
+        <li>مقالات مناسبات: العيد، اليوم الوطني، عودة المدارس</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h3>بناء الروابط الخارجية</h3>
+      <ul class="plain">
+        <li>مقالات ضيف ومراجعات في مدونات موضة وأنمي عربية.</li>
+        <li>ذكر المتجر في أدلة المتاجر الموثوقة ومنصة الأعمال.</li>
+        <li>روابط طبيعية ناتجة عن تعاونات المؤثرين.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="social">
+    <div class="section-head">
+      <span class="section-num">القسم الثالث</span>
+      <h2>محور السوشيال ميديا</h2>
+      <p>هوية بصرية موحدة، ومحتوى مبني على أعمدة واضحة، لا نشر عشوائي.</p>
+    </div>
+
+    <div class="sub">
+      <h3>أولوية المنصات</h3>
+      <ul class="plain">
+        <li><b>إنستقرام</b> — الواجهة الفخمة للبراند: صور منتج احترافية وReels.</li>
+        <li><b>تيك توك</b> — الأهم للوصول والانتشار بين جمهور الأنمي والستريت وير.</li>
+        <li><b>سناب شات</b> — ممتاز للعروض السريعة مثل "اشتر 2 واحصل على 1 مجانًا".</li>
+        <li><b>X (تويتر)</b> — للتفاعل المجتمعي ونقاشات الثقافة الشعبية.</li>
+        <li><b>واتساب بزنس</b> — موجود بالفعل، يُفعَّل كقناة بيع مباشر بكتالوج منتجات.</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h3>أعمدة المحتوى الأسبوعية</h3>
+      <div class="pillars">
+        <div class="pillar"><span class="pn">01</span><h4>محتوى منتج</h4><p>Reels تجربة اللبس وصور احترافية</p></div>
+        <div class="pillar"><span class="pn">02</span><h4>محتوى مجتمعي</h4><p>UGC من العملاء وتقييمات حقيقية</p></div>
+        <div class="pillar"><span class="pn">03</span><h4>محتوى ترفيهي</h4><p>ترندات واقتباسات مرتبطة بالأنمي والأفلام</p></div>
+        <div class="pillar"><span class="pn">04</span><h4>عروض وتحفيز</h4><p>Countdown وعروض الباقات</p></div>
+        <div class="pillar"><span class="pn">05</span><h4>خلف الكواليس</h4><p>الطباعة والتغليف وجودة القماش</p></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>جدول نشر أسبوعي مقترح</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>اليوم</th><th>إنستقرام</th><th>تيك توك</th><th>سناب / ستوري</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>الأحد</td><td>Reel تصميم جديد</td><td>فيديو ترند + تيشرت</td><td>عرض اليوم</td></tr>
+            <tr><td>الثلاثاء</td><td>UGC / تقييم عميل</td><td>تحدي / Unboxing</td><td>سؤال تفاعلي</td></tr>
+            <tr><td>الخميس</td><td>صورة منتج احترافية</td><td>خلف الكواليس</td><td>تذكير بالعرض</td></tr>
+            <tr><td>السبت</td><td>Carousel تعليمي</td><td>فيديو صوتي رائج</td><td>Countdown نهاية الأسبوع</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>الإعلانات المدفوعة</h3>
+      <ul class="plain">
+        <li><b>Meta Ads:</b> Retargeting لزوار الموقع + Lookalike من قائمة العملاء الحاليين.</li>
+        <li><b>TikTok Ads:</b> Spark Ads لتضخيم أفضل فيديوهات المؤثرين العضوية.</li>
+        <li><b>Snapchat Ads:</b> Collection Ads مناسبة جدًا لعروض "اشتر 2 واحصل على 1".</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="influencers">
+    <div class="section-head">
+      <span class="section-num">القسم الرابع</span>
+      <h2>محور المؤثرين</h2>
+      <p>اختيار مبني على التوافق مع الجمهور، لا على عدد المتابعين فقط.</p>
+    </div>
+
+    <div class="sub">
+      <h3>تصنيف المؤثرين</h3>
+      <div class="tiers">
+        <div class="tier"><div class="tname">Nano / Micro</div><div class="trange">5K–50K</div><div class="trole">تعاقد أكبر بتكلفة أقل ومصداقية عالية — مثالي لعشاق الأنمي والستريت وير المتخصصين.</div></div>
+        <div class="tier"><div class="tname">Mid-tier</div><div class="trange">50K–300K</div><div class="trole">لحملات إطلاق تصاميم جديدة وتغطية أوسع.</div></div>
+        <div class="tier"><div class="tname">Macro / مشاهير</div><div class="trange">+300K</div><div class="trole">تعاون موسمي (عيد، يوم وطني) لإحداث ضجة وثقة كبيرة بالبراند.</div></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>معايير الاختيار</h3>
+      <ul class="plain">
+        <li>نسبة التفاعل الحقيقي، لا عدد المتابعين فقط.</li>
+        <li>توافق الجمهور مع الفئة العمرية المستهدفة (تقريبًا 15–30 سنة).</li>
+        <li>اهتمام فعلي بالأنمي أو الموضة أو الثقافة الشعبية — تعاون يبدو طبيعيًا لا مقحمًا.</li>
+      </ul>
+    </div>
+
+    <div class="sub">
+      <h3>نماذج التعاون</h3>
+      <div class="models">
+        <div class="model-card"><h4>Gifting + Unboxing</h4><p>تيشرت مجاني مقابل محتوى — للمؤثرين الصغار والمتوسطين.</p></div>
+        <div class="model-card"><h4>كود خصم مخصص</h4><p>كل مؤثر يحصل على كود باسمه لقياس المبيعات الفعلية بدقة.</p></div>
+        <div class="model-card"><h4>عمولة على المبيعات</h4><p>نموذج Affiliate مستدام يقلل المخاطرة الأولية.</p></div>
+        <div class="model-card"><h4>تصميم حصري (Capsule)</h4><p>مؤثر كبير يشارك في تصميم تيشرت يحمل اسمه — حملة ربع سنوية رئيسية.</p></div>
+        <div class="model-card"><h4>تغطية لحظية</h4><p>Unboxing Live في مناسبات إطلاق التصاميم الجديدة.</p></div>
+      </div>
+    </div>
+
+    <div class="sub">
+      <h3>قياس الأداء</h3>
+      <ul class="plain">
+        <li>روابط UTM فريدة لكل مؤثر.</li>
+        <li>أكواد خصم مخصصة لتتبع المبيعات الفعلية.</li>
+        <li>متابعة التفاعل والوصول مقابل التكلفة لكل عملية بيع.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="section-head">
+      <span class="section-num">القسم الخامس</span>
+      <h2>خطة تنفيذ 90 يومًا</h2>
+      <p>ثلاث مراحل متتالية، كل مرحلة تبني على ما قبلها.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tstep">
+        <div class="tnum">01</div>
+        <div>
+          <h4>التأسيس</h4>
+          <p class="weeks">الأسابيع 1–4</p>
+          <p class="desc">ضبط السيو التقني والميتا داتا، إنشاء وتفعيل حسابات سوشيال رسمية موحدة الهوية، إعداد أول أربعة أسابيع من المحتوى.</p>
+        </div>
+      </div>
+      <div class="tstep">
+        <div class="tnum">02</div>
+        <div>
+          <h4>الإطلاق</h4>
+          <p class="weeks">الأسابيع 5–8</p>
+          <p class="desc">نشر منتظم يومي وأسبوعي، بدء تعاون مع 5–10 مؤثرين من فئة Nano/Micro، تفعيل إعلانات Retargeting.</p>
+        </div>
+      </div>
+      <div class="tstep">
+        <div class="tnum">03</div>
+        <div>
+          <h4>التضخيم</h4>
+          <p class="weeks">الأسابيع 9–12</p>
+          <p class="desc">تحليل النتائج، تعاون مع مؤثر Mid-tier أو مشهور لحملة موسمية، إطلاق Spark Ads على أفضل المحتوى.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kpis">
+    <div class="section-head">
+      <span class="section-num">القسم السادس</span>
+      <h2>مؤشرات الأداء الرئيسية</h2>
+      <p>ما الذي نقيسه في كل محور لمعرفة أن الخطة تعمل.</p>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><h4>السيو</h4><p>عدد الكلمات في أول صفحة نتائج، الزيارات العضوية الشهرية، معدل التحويل من البحث.</p></div>
+      <div class="kpi"><h4>سوشيال ميديا</h4><p>نمو المتابعين، معدل التفاعل، الزيارات المحوّلة من كل منصة للموقع.</p></div>
+      <div class="kpi"><h4>المؤثرين</h4><p>المبيعات المتتبعة عبر الأكواد، تكلفة اكتساب العميل مقارنة بالإعلانات المدفوعة.</p></div>
+      <div class="kpi"><h4>عام</h4><p>نمو الإيرادات الشهرية، متوسط قيمة الطلب، معدل تكرار الشراء.</p></div>
+    </div>
+  </section>
+
+  <section class="closing" style="border-bottom:none;">
+    <span class="mark">ملاحظة ختامية</span>
+    <p>القيمة الأكبر الآن هي <b>الربط بين المحاور الثلاثة</b> بدل التعامل معها منفصلة: محتوى المؤثرين يُعاد استخدامه كإعلانات مدفوعة، وأسئلة العملاء في السوشيال تتحول لمقالات سيو، والتقييمات الحقيقية على الموقع تُستخدم كمحتوى ثقة في كل قناة. هذا التكامل هو ما يصنع حضورًا فخمًا ومتماسكًا للبراند.</p>
+  </section>
+
+</div>
+
+<footer>خطة تسويقية أُعدت لمتجر كوزي — koziksa.com</footer>
+
+</body>
+</html>

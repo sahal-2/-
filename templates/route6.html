@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطة تسويق Mocco | 6 أشهر + توقع الأرباح</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+:root{--bg:#071A2E;--c1:#0C2540;--c2:#0F2C4C;--line:rgba(91,168,230,.18);--acc:#2F8BD8;--acc2:#8EC5F2;--cream:#F4F1E2;--tx:#E6EDF5;--mut:#9FB4C8;--dim:#6E88A3;--ok:#4ADE80;--bad:#F87171}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo','Segoe UI',Tahoma,sans-serif}
+body{background:var(--bg);color:var(--tx);padding:2rem 1rem;line-height:1.8;min-height:100vh;
+ background-image:radial-gradient(circle at 15% 20%,rgba(47,139,216,.10) 0%,transparent 45%),radial-gradient(circle at 85% 80%,rgba(244,241,226,.05) 0%,transparent 50%)}
+.container{max-width:1200px;margin:0 auto;background:linear-gradient(160deg,var(--c1) 0%,var(--c2) 100%);border-radius:36px;box-shadow:0 30px 80px rgba(0,0,0,.5);padding:3rem 2.5rem;border:1px solid var(--line);position:relative;overflow:hidden}
+.container::before{content:'';position:absolute;top:0;right:0;width:420px;height:420px;background:radial-gradient(circle,rgba(47,139,216,.16),transparent 70%);pointer-events:none}
+h1{font-size:2.6rem;color:var(--cream);padding-right:1.5rem;margin-bottom:.4rem;font-weight:900;position:relative;letter-spacing:-.5px}
+h1::before{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:6px;height:80%;background:linear-gradient(180deg,var(--acc2),var(--acc));border-radius:10px}
+.subhead{color:var(--mut);font-size:1.15rem;margin-bottom:1.6rem;padding-right:2rem}
+.pills{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 .4rem}
+.pill{background:rgba(47,139,216,.14);border:1px solid rgba(91,168,230,.35);padding:.35rem 1.1rem;border-radius:40px;font-size:.9rem;font-weight:700;color:var(--acc2)}
+.meta-bar{background:linear-gradient(135deg,var(--acc) 0%,#1C6DB4 100%);color:#fff;border-radius:24px;padding:1.2rem 2rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.6rem;margin:1.8rem 0 2.6rem;box-shadow:0 12px 30px rgba(47,139,216,.25)}
+.meta-bar span{font-weight:600}.meta-bar strong{font-size:1.35rem;font-weight:900}
+.section-title{font-size:1.8rem;color:var(--cream);font-weight:800;margin:2.6rem 0 1.4rem;display:flex;align-items:center;gap:12px}
+.section-title .num{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#06223F;border-radius:14px;width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:900}
+.grid-6{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:1.6rem 0}
+.card{background:linear-gradient(160deg,#10304F 0%,#0D2844 100%);border:1px solid var(--line);border-radius:24px;padding:1.7rem 1.5rem;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;top:0;right:0;width:100%;height:3px;background:linear-gradient(90deg,var(--acc),transparent)}
+.card h3{color:var(--cream);font-size:1.3rem;margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.card ul{list-style:none}
+.card li{margin-bottom:.75rem;padding-right:1.6rem;position:relative;font-size:.95rem;color:#D5E1EE}
+.card li::before{content:"▪";position:absolute;right:0;color:var(--acc);font-size:1.2rem;line-height:1.4}
+.card li b.svc{display:inline-block;font-size:.72rem;font-weight:800;color:var(--acc2);background:rgba(47,139,216,.14);border-radius:20px;padding:0 .55rem;margin-left:.4rem}
+.month-tag{display:inline-block;background:rgba(244,241,226,.10);color:var(--cream);font-size:.75rem;padding:.2rem .8rem;border-radius:30px;font-weight:700;border:1px solid rgba(244,241,226,.22)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem}
+.svc-card{background:rgba(47,139,216,.07);border:1px solid var(--line);border-radius:20px;padding:1.2rem 1.3rem}
+.svc-card h4{color:var(--cream);font-size:1.05rem;margin-bottom:.35rem}
+.svc-card p{color:var(--mut);font-size:.88rem}
+.influencer-box{background:linear-gradient(160deg,#10304F 0%,#0D2844 100%);border:1px solid var(--line);border-radius:28px;padding:2rem;margin:1rem 0 2rem}
+.influencer-box h2{color:var(--cream);font-size:1.5rem;margin-bottom:.7rem;display:flex;align-items:center;gap:12px;font-weight:800}
+.influencer-box h2 span{background:linear-gradient(135deg,var(--acc2),var(--acc));border-radius:14px;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:#06223F;font-size:1.2rem}
+.influencer-box>p{color:var(--mut);font-size:.95rem}
+.influencer-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;margin-top:1.4rem}
+.influencer-item{background:rgba(47,139,216,.08);border-radius:18px;padding:1rem 1.2rem;border-right:4px solid var(--acc);font-weight:700;color:var(--cream);font-size:.95rem}
+.influencer-item small{display:block;color:var(--mut);font-weight:500;font-size:.8rem;margin-top:.2rem}
+.profit-section{background:linear-gradient(160deg,#123456 0%,#0D2844 100%);border-radius:32px;padding:2.4rem 2rem;margin:1rem 0 1.5rem;border:1px solid rgba(91,168,230,.28)}
+.profit-section h2{color:var(--cream);font-size:1.8rem;margin-bottom:.4rem;font-weight:900}
+.profit-desc{color:var(--mut);margin-bottom:1.6rem}
+.scenario-buttons{display:flex;flex-wrap:wrap;gap:.8rem;margin:1.2rem 0}
+.scenario-btn{background:rgba(47,139,216,.10);border:1px solid rgba(91,168,230,.3);color:#D5E1EE;padding:.55rem 1.4rem;border-radius:40px;font-weight:700;cursor:pointer;font-size:.88rem;font-family:'Cairo',sans-serif}
+.scenario-btn.active{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#06223F;border-color:transparent}
+.assumptions-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin:1.2rem 0}
+.assumption-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem .9rem;background:rgba(47,139,216,.08);border-radius:12px;font-size:.9rem}
+.assumption-item span:first-child{color:var(--mut)}.assumption-item span:last-child{color:var(--cream);font-weight:800}
+.forecast-table-wrap{overflow-x:auto;margin:1.6rem 0;border-radius:24px;border:1px solid var(--line);background:rgba(7,26,46,.5)}
+.forecast-table{width:100%;border-collapse:collapse;min-width:760px;font-size:.92rem}
+.forecast-table thead th{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#06223F;font-weight:800;padding:.9rem .7rem;text-align:center;font-size:.85rem;white-space:nowrap}
+.forecast-table td{padding:.85rem .7rem;text-align:center;border-bottom:1px solid var(--line);color:#DCE6F1;font-weight:600}
+.forecast-table .month-cell{color:var(--cream);font-weight:800;text-align:right;padding-right:1.2rem}
+.forecast-table .profit-cell{color:var(--ok);font-weight:800}.forecast-table .neg{color:var(--bad)}
+.forecast-table .total-row td{background:rgba(47,139,216,.14);color:var(--cream);font-weight:900;border-top:2px solid rgba(91,168,230,.4)}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin:1.6rem 0}
+.summary-card{background:rgba(47,139,216,.09);border:1px solid var(--line);border-radius:20px;padding:1.3rem;text-align:center}
+.s-label{font-size:.84rem;color:var(--mut);font-weight:600;margin-bottom:.4rem}
+.s-value{font-size:1.5rem;font-weight:900;color:var(--cream);line-height:1.3}.s-value.green{color:var(--ok)}
+.s-sub{font-size:.75rem;color:var(--dim);margin-top:.3rem}
+.profit-note,.note{background:rgba(47,139,216,.07);border-radius:16px;padding:1rem 1.4rem;margin-top:1.6rem;font-size:.88rem;color:var(--mut);border-right:3px solid var(--acc)}
+.profit-note strong,.note strong{color:var(--cream)}
+.calc-box{background:rgba(7,26,46,.55);border:1px solid var(--line);border-radius:24px;padding:2rem;margin-top:1rem}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
+.calc-inputs{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.calc-field label{display:block;font-size:.85rem;color:var(--mut);font-weight:600;margin-bottom:.35rem}
+.calc-field input{width:100%;padding:.65rem .9rem;border:1px solid rgba(91,168,230,.3);border-radius:12px;font-size:1rem;font-weight:700;color:var(--cream);background:rgba(12,37,64,.9);outline:none;font-family:'Cairo',sans-serif}
+.calc-result{background:rgba(47,139,216,.08);border-radius:20px;padding:1.4rem;border:1px solid var(--line)}
+.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--line)}
+.calc-result-row:last-of-type{border-bottom:none}
+.cr-label{color:var(--mut);font-size:.9rem}.cr-value{font-weight:900;font-size:1.15rem;color:var(--cream)}.cr-value.big{color:var(--ok);font-size:1.5rem}
+.final-verdict{margin-top:1.2rem;text-align:center;padding:.9rem;border-radius:16px;font-weight:800}
+.final-verdict.good{background:rgba(74,222,128,.12);color:var(--ok);border:1px solid rgba(74,222,128,.3)}
+.final-verdict.bad{background:rgba(248,113,113,.12);color:var(--bad);border:1px solid rgba(248,113,113,.3)}
+.footer{text-align:center;margin-top:3rem;color:var(--dim);font-size:.9rem;border-top:1px solid var(--line);padding-top:2rem}
+@media(max-width:800px){.calc-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.container{padding:1.8rem 1.2rem}h1{font-size:1.9rem}.section-title{font-size:1.4rem}.calc-inputs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Mocco — خطة 6 أشهر</h1>
+  <div class="subhead">قهوة مختصة · تسويق متكامل · نمو شهري مدروس</div>
+  <div class="pills">
+    <span class="pill" data-sec="seo">تحسين محركات البحث</span>
+    <span class="pill" data-sec="social">السوشيال ميديا</span>
+    <span class="pill" data-sec="ads">الحملات الإعلانية</span>
+    <span class="pill" data-sec="influencers">المشاهير</span>
+    <span class="pill" data-sec="design">صناعة المحتوى والتصميم</span>
+  </div>
+  <div class="meta-bar"><span>مدة الخطة: <strong>6 أشهر</strong></span><span>هدف الخطة: <strong>نمو ثابت في الطلبات كل شهر</strong></span></div>
+
+  <div class="section-title"><span class="num">01</span> الخدمات المشمولة</div>
+  <div class="svc-grid">
+    <div class="svc-card" data-sec="seo"><h4>تحسين محركات البحث (SEO)</h4><p>ظهور المتجر في نتائج جوجل لكلمات البحث التي يكتبها العملاء فعلًا، بمحتوى وصفحات مُحسّنة.</p></div>
+    <div class="svc-card" data-sec="social"><h4>إدارة السوشيال ميديا</h4><p>خطة محتوى شهرية ونشر منتظم وإدارة الحسابات والرد على العملاء على سناب وتيك توك وإنستجرام.</p></div>
+    <div class="svc-card" data-sec="ads"><h4>الحملات الإعلانية</h4><p>حملات ممولة باستهداف دقيق وإعادة استهداف للزوار، وتحسين أسبوعي حسب النتائج.</p></div>
+    <div class="svc-card" data-sec="influencers"><h4>التسويق عبر المشاهير</h4><p>مشهور مناسب لنشاط المتجر كل شهر، بكود خصم خاص لقياس نتيجة كل حملة.</p></div>
+    <div class="svc-card" data-sec="design"><h4>صناعة المحتوى والتصميم</h4><p>تصاميم ثابتة ومتحركة وفيديوهات قصيرة بهوية موحّدة تعكس جودة المنتج.</p></div>
+  </div>
+
+  <div class="section-title"><span class="num">02</span> الخطة الشهرية التفصيلية</div>
+  <div class="grid-6" id="months">
+    <div class="card month" data-m="1"><h3>الشهر الأول <span class="month-tag">تأسيس</span></h3><ul>
+      <li data-sec="seo"><b class="svc">SEO</b>تحسين أساسيات المتجر: العناوين والأوصاف وسرعة الموقع والروابط الداخلية.</li>
+      <li data-sec="design"><b class="svc">تصميم</b>هوية بصرية موحدة للمنشورات والقصص وقوالب جاهزة لكل نوع محتوى.</li>
+      <li data-sec="social"><b class="svc">سوشيال</b>تجهيز حسابات إنستجرام وتيك توك وسناب بمحتوى تعريفي عن أنواع البن.</li>
+      <li data-sec="ads"><b class="svc">إعلانات</b>حملة تعريفية أولى مع تفعيل البكسل وإعادة استهداف الزوار.</li>
+      <li data-sec="influencers"><b class="svc">مشاهير</b>التعاقد مع أول مشهور متخصص في القهوة.</li>
+    </ul></div>
+    <div class="card month" data-m="2"><h3>الشهر الثاني <span class="month-tag">محتوى</span></h3><ul>
+      <li data-sec="seo"><b class="svc">SEO</b>نشر 4 مقالات عن نكهات البن وأفضل طرق التحضير.</li>
+      <li data-sec="design"><b class="svc">تصميم</b>سلسلة فيديوهات قصيرة عن «رحلة الحبة إلى الفنجان».</li>
+      <li data-sec="social"><b class="svc">سوشيال</b>نشر منتظم ومسابقة تفاعلية بين المتابعين.</li>
+      <li data-sec="ads"><b class="svc">إعلانات</b>حملة على إنستجرام تستهدف عشاق القهوة المختصة.</li>
+      <li data-sec="influencers"><b class="svc">مشاهير</b>تعاون مع مشهور ثانٍ في مجال القهوة.</li>
+    </ul></div>
+    <div class="card month" data-m="3"><h3>الشهر الثالث <span class="month-tag">تفاعل</span></h3><ul>
+      <li data-sec="seo"><b class="svc">SEO</b>3 مقالات موجهة لأسئلة الجمهور وتحسين صفحات المنتجات.</li>
+      <li data-sec="design"><b class="svc">تصميم</b>محتوى من تجارب العملاء (UGC) بتصاميم جاهزة للنشر.</li>
+      <li data-sec="social"><b class="svc">سوشيال</b>إطلاق مسابقة «اكتشف نكهتك» لزيادة التفاعل.</li>
+      <li data-sec="ads"><b class="svc">إعلانات</b>حملة على تيك توك بمحتوى إبداعي قصير.</li>
+      <li data-sec="influencers"><b class="svc">مشاهير</b>تعاون مع مشهور ثالث في مجال القهوة.</li>
+    </ul></div>
+    <div class="card month" data-m="4"><h3>الشهر الرابع <span class="month-tag">توسع</span></h3><ul>
+      <li data-sec="seo"><b class="svc">SEO</b>صفحات هبوط مخصصة لكل نوع بن وتحسين الظهور في خرائط جوجل.</li>
+      <li data-sec="design"><b class="svc">تصميم</b>تصاميم موسمية وعروض بهوية المتجر.</li>
+      <li data-sec="social"><b class="svc">سوشيال</b>قصص يومية عن تجربة العملاء وكواليس التحميص.</li>
+      <li data-sec="ads"><b class="svc">إعلانات</b>حملة على سناب شات تستهدف الرياض وجدة.</li>
+      <li data-sec="influencers"><b class="svc">مشاهير</b>تعاون مع مشهور رابع متخصص في القهوة.</li>
+    </ul></div>
+    <div class="card month" data-m="5"><h3>الشهر الخامس <span class="month-tag">تعزيز</span></h3><ul>
+      <li data-sec="seo"><b class="svc">SEO</b>بناء روابط خارجية من مدونات قهوة سعودية.</li>
+      <li data-sec="design"><b class="svc">تصميم</b>فيديو قصة نجاح المتجر وتصاميم للإعلانات الأفضل أداءً.</li>
+      <li data-sec="social"><b class="svc">سوشيال</b>محتوى تعليمي عن طرق التحضير وتفاعل مباشر مع المتابعين.</li>
+      <li data-sec="ads"><b class="svc">إعلانات</b>زيادة الميزانية على الحملات الأعلى عائدًا مع التركيز على «الطازجية».</li>
+      <li data-sec="influencers"><b class="svc">مشاهير</b>تعاون مع مشهور خامس في مجال القهوة.</li>
+    </ul></div>
+    <div class="card month" data-m="6"><h3>الشهر السادس <span class="month-tag">حصاد</span></h3><ul>
+      <li data-sec="seo"><b class="svc">SEO</b>مراجعة شاملة وتحسين الصفحات الأكثر زيارة.</li>
+      <li data-sec="design"><b class="svc">تصميم</b>تحديث الهوية والمحتوى استعدادًا للمرحلة التالية.</li>
+      <li data-sec="social"><b class="svc">سوشيال</b>عرض خاص للمتابعين الجدد بكود خصم.</li>
+      <li data-sec="ads"><b class="svc">إعلانات</b>حملة إعادة استهداف قوية لكل زوار المتجر.</li>
+      <li data-sec="influencers"><b class="svc">مشاهير</b>تعاون مع مشهور سادس متخصص في القهوة.</li>
+    </ul></div>
+  </div>
+
+  <div data-sec="influencers">
+  <div class="section-title"><span class="num">03</span> التعاقدات مع المشاهير</div>
+  <div class="influencer-box">
+    <h2><span>★</span> 6 مشاهير طوال الخطة</h2>
+    <p>مشاهير متخصصون في مجال المتجر، ويُستعان بواحد كل شهر بدءًا من الشهر الأول، ولكل واحد كود خصم خاص لقياس نتيجته.</p>
+    <div class="influencer-list" id="infList">
+      <div class="influencer-item">المشهور 1 <small>الشهر الأول · قهوة مختصة</small></div>
+      <div class="influencer-item">المشهور 2 <small>الشهر الثاني · قهوة مختصة</small></div>
+      <div class="influencer-item">المشهور 3 <small>الشهر الثالث · قهوة مختصة</small></div>
+      <div class="influencer-item">المشهور 4 <small>الشهر الرابع · قهوة مختصة</small></div>
+      <div class="influencer-item">المشهور 5 <small>الشهر الخامس · قهوة مختصة</small></div>
+      <div class="influencer-item">المشهور 6 <small>الشهر السادس · قهوة مختصة</small></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="section-title"><span class="num">04</span> توقع المبيعات والأرباح</div>
+  <div class="profit-section">
+    <h2>التوقع الشهري</h2>
+    <p class="profit-desc">توقع تفصيلي للزيارات والطلبات والأرباح على مدار الخطة، مبني على نمو تدريجي مع تنفيذ الخطة التسويقية.</p>
+    <div class="scenario-buttons">
+      <button class="scenario-btn" data-scenario="low">السيناريو المتحفظ</button>
+      <button class="scenario-btn active" data-scenario="mid">السيناريو الواقعي</button>
+      <button class="scenario-btn" data-scenario="high">السيناريو الطموح</button>
+    </div>
+    <div class="assumptions-list">
+      <div class="assumption-item"><span>متوسط قيمة الطلب</span><span id="aovLabel">—</span></div>
+      <div class="assumption-item"><span>هامش الربح</span><span id="marginLabel">—</span></div>
+      <div class="assumption-item"><span>زيارات الشهر الأول</span><span id="visitsLabel">—</span></div>
+      <div class="assumption-item"><span>نمو الزيارات الشهري</span><span id="growthLabel">—</span></div>
+    </div>
+    <div class="forecast-table-wrap"><table class="forecast-table">
+      <thead><tr><th>الشهر</th><th>الزيارات</th><th>نسبة التحويل</th><th>الطلبات</th><th>المبيعات</th><th>إجمالي الربح</th><th>صافي الربح</th></tr></thead>
+      <tbody id="forecastBody"></tbody></table></div>
+    <div class="summary-grid">
+      <div class="summary-card"><div class="s-label">إجمالي الطلبات</div><div class="s-value" id="sumOrders">—</div><div class="s-sub">طلب</div></div>
+      <div class="summary-card"><div class="s-label">إجمالي المبيعات</div><div class="s-value" id="sumRevenue">—</div><div class="s-sub">ريال</div></div>
+      <div class="summary-card"><div class="s-label">إجمالي صافي الربح</div><div class="s-value green" id="sumProfit">—</div><div class="s-sub">ريال</div></div>
+      <div class="summary-card"><div class="s-label">متوسط صافي الربح الشهري</div><div class="s-value green" id="avgProfit">—</div><div class="s-sub">ريال / شهر</div></div>
+    </div>
+    <div class="profit-note"><strong>ملاحظة:</strong> هذه التوقعات تقديرية مبنية على افتراضات نمو تدريجي، وصافي الربح محسوب بعد خصم تكلفة التسويق الشهرية. النتائج الفعلية تختلف حسب السوق والمنافسة وجودة التنفيذ، ونراجع الأرقام شهريًا ونعدّلها حسب الأداء الحقيقي.</div>
+  </div>
+
+  <div class="section-title"><span class="num">05</span> احسب أرباحك بنفسك</div>
+  <div class="calc-box">
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <div class="calc-field"><label for="cVisits">الزيارات الشهرية</label><input id="cVisits" type="number" value="6000" min="0"></div>
+        <div class="calc-field"><label for="cCr">نسبة التحويل %</label><input id="cCr" type="number" value="1.5" step="0.1" min="0"></div>
+        <div class="calc-field"><label for="cAov">متوسط قيمة الطلب (ريال)</label><input id="cAov" type="number" value="200" min="0"></div>
+        <div class="calc-field"><label for="cMargin">هامش الربح %</label><input id="cMargin" type="number" value="55" min="0" max="100"></div>
+        <div class="calc-field"><label for="cCost">تكلفة التسويق الشهرية (ريال)</label><input id="cCost" type="number" value="1500" min="0"></div>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-row"><span class="cr-label">الطلبات المتوقعة</span><span class="cr-value" id="rOrders">—</span></div>
+        <div class="calc-result-row"><span class="cr-label">المبيعات</span><span class="cr-value" id="rRev">—</span></div>
+        <div class="calc-result-row"><span class="cr-label">إجمالي الربح</span><span class="cr-value" id="rGross">—</span></div>
+        <div class="calc-result-row"><span class="cr-label">صافي الربح الشهري</span><span class="cr-value big" id="rNet">—</span></div>
+        <div class="final-verdict" id="verdict"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note"><strong>كيف نقيس النجاح؟</strong> تقرير شهري بالزيارات والطلبات والمبيعات من كل قناة، ومراجعة أسبوعية للحملات والمشاهير، ونقل الميزانية فورًا للأفضل أداءً.</div>
+  <div class="footer">أُعدت هذه الخطة لمتجر Mocco · الأرقام تقديرات تخطيطية تُحدَّث ببيانات المتجر الفعلية.</div>
+</div>
+<script>
+var MONTHS=6;
+var SCN={"low":{"aov":180,"margin":50,"visits":2500,"growth":18,"cr":1.0,"crStep":0.12,"cost":1500},"mid":{"aov":200,"margin":55,"visits":3000,"growth":25,"cr":1.2,"crStep":0.15,"cost":1500},"high":{"aov":220,"margin":58,"visits":3600,"growth":32,"cr":1.4,"crStep":0.18,"cost":1500}};
+var MN=['الشهر الأول','الشهر الثاني','الشهر الثالث','الشهر الرابع','الشهر الخامس','الشهر السادس','الشهر السابع','الشهر الثامن','الشهر التاسع','الشهر العاشر','الشهر الحادي عشر','الشهر الثاني عشر'];
+function f(n){return Math.round(n).toLocaleString('en-US')}
+function render(k){
+  var s=SCN[k],rows='',to=0,tr=0,tg=0,tn=0,v=s.visits;
+  document.getElementById('aovLabel').textContent=f(s.aov)+' ريال';
+  document.getElementById('marginLabel').textContent=s.margin+'%';
+  document.getElementById('visitsLabel').textContent=f(s.visits);
+  document.getElementById('growthLabel').textContent='+'+s.growth+'%';
+  for(var i=0;i<MONTHS;i++){
+    var cr=s.cr+s.crStep*i, o=v*cr/100, r=o*s.aov, g=r*s.margin/100, n=g-s.cost;
+    to+=o;tr+=r;tg+=g;tn+=n;
+    rows+='<tr><td class="month-cell">'+(MN[i]||('الشهر '+(i+1)))+'</td><td>'+f(v)+'</td><td>'+cr.toFixed(2)+'%</td><td>'+f(o)+'</td><td>'+f(r)+'</td><td>'+f(g)+'</td><td class="profit-cell'+(n<0?' neg':'')+'">'+f(n)+'</td></tr>';
+    v=v*(1+s.growth/100);
+  }
+  rows+='<tr class="total-row"><td class="month-cell">الإجمالي</td><td></td><td></td><td>'+f(to)+'</td><td>'+f(tr)+'</td><td>'+f(tg)+'</td><td class="profit-cell'+(tn<0?' neg':'')+'">'+f(tn)+'</td></tr>';
+  document.getElementById('forecastBody').innerHTML=rows;
+  document.getElementById('sumOrders').textContent=f(to);
+  document.getElementById('sumRevenue').textContent=f(tr);
+  document.getElementById('sumProfit').textContent=f(tn);
+  document.getElementById('avgProfit').textContent=f(tn/MONTHS);
+}
+function calc(){
+  var g=function(id){return parseFloat(document.getElementById(id).value)||0};
+  var o=g('cVisits')*g('cCr')/100, r=o*g('cAov'), gr=r*g('cMargin')/100, n=gr-g('cCost');
+  document.getElementById('rOrders').textContent=f(o)+' طلب';
+  document.getElementById('rRev').textContent=f(r)+' ريال';
+  document.getElementById('rGross').textContent=f(gr)+' ريال';
+  document.getElementById('rNet').textContent=f(n)+' ريال';
+  var vd=document.getElementById('verdict');
+  vd.className='final-verdict '+(n>=0?'good':'bad');
+  vd.textContent=n>=0?'التسويق يغطي تكلفته ويحقق ربحًا صافيًا':'محتاج زيارات أو تحويل أعلى لتغطية تكلفة التسويق';
+}
+[].forEach.call(document.querySelectorAll('.scenario-btn'),function(b){b.addEventListener('click',function(){[].forEach.call(document.querySelectorAll('.scenario-btn'),function(x){x.classList.remove('active')});b.classList.add('active');render(b.getAttribute('data-scenario'))})});
+[].forEach.call(document.querySelectorAll('.calc-field input'),function(i){i.addEventListener('input',calc)});
+render('mid');calc();
+</script>
+</body>
+</html>

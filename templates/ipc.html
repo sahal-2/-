@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPC PERFUMES — الخطة التنفيذية لتطوير التطبيق الأصلي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   IPC PERFUMES — Executive App Development Plan
+   Mobile-first PDF sheet : 130mm x 230mm
+   Theme : Deep Obsidian + Royal Gold
+   ============================================================ */
+
+@page {
+  size: 130mm 230mm;
+  margin: 0;
+}
+
+:root{
+  --obsidian:      #0B1117;
+  --obsidian-2:    #111B26;
+  --panel:         #141F2B;
+  --panel-2:       #0E1720;
+  --gold:          #378DD4;
+  --gold-light:    #ABD3F3;
+  --gold-deep:     #1165AA;
+  --ink:           #F8F6EE;
+  --ink-soft:      #A6C9E5;
+  --ink-mute:      #629FD1;
+  --line:          rgba(55,141,212,.22);
+  --line-soft:     rgba(255,255,255,.07);
+  --grad-gold:     linear-gradient(135deg, #1165AA 0%, #378DD4 38%, #ABD3F3 62%, #378DD4 100%);
+
+  /* مقاسات مرنة — تُعاد ضبطها في وضع الطباعة إلى مقاس الـ PDF الثابت */
+  --page-w: 130mm;
+  --page-h: 230mm;
+  --pad-x:  clamp(14px, 5vw, 9mm);
+  --pad-y:  clamp(18px, 6vw, 12mm);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html, body{
+  background: var(--obsidian);
+  color: var(--ink);
+  font-family: 'Cairo', 'Segoe UI', 'Tahoma', sans-serif;
+  font-size: 11.5pt;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* ---------- Page shell ---------- */
+.page{
+  position: relative;
+  width: 100%;
+  max-width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 0 auto;
+  padding: var(--pad-y) var(--pad-x) calc(var(--pad-y) + 1mm);
+  background: var(--obsidian);
+  background-image:
+    radial-gradient(120% 55% at 50% -12%, rgba(55,141,212,.13) 0%, rgba(11,17,23,0) 60%),
+    radial-gradient(90% 45% at 100% 105%, rgba(17,101,170,.10) 0%, rgba(11,17,23,0) 65%);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+}
+.page:last-of-type{ page-break-after: auto; break-after: auto; }
+
+/* هالة ذهبية خفيفة في زاوية الصفحة */
+.page::before{
+  content:"";
+  position:absolute;
+  top:-38mm; left:-30mm;
+  width:80mm; height:80mm;
+  background: radial-gradient(circle, rgba(55,141,212,.16) 0%, rgba(55,141,212,0) 70%);
+  pointer-events:none;
+}
+
+/* خط ذهبي علوي رفيع */
+.page::after{
+  content:"";
+  position:absolute;
+  top:0; right:0; left:0;
+  height:2.2mm;
+  background: var(--grad-gold);
+}
+
+/* ---------- Typography ---------- */
+.gold-text{
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+h1,h2,h3,h4{ line-height:1.4; font-weight:800; }
+
+.page-head{
+  display:flex;
+  align-items:flex-start;
+  gap:3.5mm;
+  padding-bottom:4mm;
+  border-bottom:1px solid var(--line);
+  margin-bottom:6mm;
+}
+.phase-chip{
+  flex:0 0 auto;
+  width:13mm; height:13mm;
+  border-radius:4mm;
+  background: var(--grad-gold);
+  color:#0B1117;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:900; font-size:14pt;
+  box-shadow: 0 0 0 1px rgba(171,211,243,.35), 0 3mm 7mm rgba(55,141,212,.18);
+}
+.page-head .titles{ flex:1; }
+.page-head .kicker{
+  font-size:8.5pt;
+  font-weight:600;
+  color: var(--gold);
+  letter-spacing:.2px;
+}
+.page-head h2{
+  font-size:15pt;
+  font-weight:900;
+  color: var(--ink);
+  margin-top:.5mm;
+}
+.page-head .sub{
+  font-size:9.5pt;
+  color: var(--ink-mute);
+  font-weight:400;
+  margin-top:1mm;
+}
+
+.lede{
+  font-size:10.5pt;
+  color: var(--ink-soft);
+  margin-bottom:5mm;
+}
+
+/* ---------- Cards ---------- */
+.card{
+  position:relative;
+  background: linear-gradient(160deg, var(--panel) 0%, var(--panel-2) 100%);
+  border:1px solid var(--line-soft);
+  border-radius:4.5mm;
+  padding:5mm 5mm 5mm 5mm;
+  margin-bottom:4.5mm;
+}
+.card.accent{
+  border-color: var(--line);
+  box-shadow: inset 0 0 0 1px rgba(55,141,212,.06);
+}
+.card.accent::before{
+  content:"";
+  position:absolute;
+  top:5mm; bottom:5mm; right:0;
+  width:.9mm;
+  border-radius:1mm;
+  background: var(--grad-gold);
+}
+.card h3{
+  font-size:11.5pt;
+  font-weight:800;
+  color: var(--gold-light);
+  margin-bottom:2mm;
+  display:flex; align-items:center; gap:2.5mm;
+}
+.card h3 .dot{
+  width:2.4mm; height:2.4mm;
+  border-radius:50%;
+  background: var(--grad-gold);
+  flex:0 0 auto;
+}
+.card p{
+  font-size:10pt;
+  color: var(--ink-soft);
+}
+
+/* ---------- Feature list ---------- */
+.flist{ list-style:none; margin-top:2.5mm; }
+.flist li{
+  position:relative;
+  padding-right:6mm;
+  font-size:9.8pt;
+  color: var(--ink-soft);
+  margin-bottom:2.2mm;
+  line-height:1.7;
+}
+.flist li::before{
+  content:"";
+  position:absolute;
+  right:0; top:3.1mm;
+  width:2.6mm; height:2.6mm;
+  transform: rotate(45deg);
+  background: var(--grad-gold);
+  border-radius:.6mm;
+}
+.flist li b{ color: var(--ink); font-weight:700; }
+
+/* ---------- Cover ---------- */
+.cover{
+  justify-content:space-between;
+  text-align:center;
+}
+.cover-top{ padding-top:10mm; }
+.brand-mark{
+  width:26mm; height:26mm;
+  margin:0 auto 6mm;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(circle at 30% 25%, #192735 0%, #0B1117 70%);
+  border:1px solid var(--line);
+  box-shadow: 0 0 0 3mm rgba(55,141,212,.05), 0 0 14mm rgba(55,141,212,.18);
+  font-size:15pt; font-weight:900;
+  letter-spacing:.5px;
+}
+.brand-name{
+  font-size:22pt;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:1mm;
+}
+.brand-tag{
+  font-size:9pt;
+  color: var(--ink-mute);
+  letter-spacing:1px;
+  margin-bottom:8mm;
+}
+.rule{
+  width:28mm; height:1px;
+  margin:0 auto 8mm;
+  background: var(--grad-gold);
+}
+.cover h1{
+  font-size:19pt;
+  font-weight:900;
+  line-height:1.5;
+  margin-bottom:3mm;
+}
+.cover .cover-sub{
+  font-size:10.5pt;
+  color: var(--ink-soft);
+  max-width:96mm;
+  margin:0 auto;
+}
+.cover-stats{
+  display:flex; gap:3mm;
+  margin:9mm 0 6mm;
+}
+.cover-stats .st{
+  flex:1;
+  background: linear-gradient(160deg, var(--panel) 0%, var(--panel-2) 100%);
+  border:1px solid var(--line);
+  border-radius:3.5mm;
+  padding:3.5mm 1.5mm;
+}
+.cover-stats .st .n{
+  font-size:14pt; font-weight:900; line-height:1.2;
+}
+.cover-stats .st .l{
+  font-size:7.6pt; color: var(--ink-mute); margin-top:1mm; line-height:1.4;
+}
+.cover-foot{
+  border-top:1px solid var(--line);
+  padding-top:4mm;
+  font-size:8.6pt;
+  color: var(--ink-mute);
+}
+.cover-foot b{ color: var(--gold); font-weight:700; }
+
+/* ---------- ROI ---------- */
+.roi{
+  background: linear-gradient(160deg, var(--panel) 0%, var(--panel-2) 100%);
+  border:1px solid var(--line);
+  border-radius:4.5mm;
+  padding:4mm 4.5mm 4.5mm;
+  margin-bottom:4mm;
+}
+.roi .metric{
+  font-size:10.5pt;
+  font-weight:800;
+  color: var(--gold-light);
+  margin-bottom:3mm;
+}
+.roi .vs{
+  display:flex;
+  align-items:stretch;
+  gap:3mm;
+}
+.roi .col{
+  flex:1;
+  background: rgba(255,255,255,.03);
+  border:1px solid var(--line-soft);
+  border-radius:3mm;
+  padding:3mm 2mm;
+  text-align:center;
+}
+.roi .col.app{
+  background: rgba(55,141,212,.09);
+  border-color: var(--line);
+}
+.roi .col .lab{
+  font-size:8pt; color: var(--ink-mute); margin-bottom:1.5mm;
+}
+.roi .col .val{
+  font-size:16pt; font-weight:900; color: var(--ink-soft); line-height:1.1;
+}
+.roi .col.app .val{
+  background: var(--grad-gold);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent; -webkit-text-fill-color:transparent;
+}
+.roi .col .unit{ font-size:8.5pt; font-weight:600; color: var(--ink-mute); }
+.roi .note{
+  font-size:8.8pt;
+  color: var(--ink-mute);
+  margin-top:3mm;
+  padding-top:2.5mm;
+  border-top:1px dashed rgba(255,255,255,.09);
+}
+
+/* ---------- Payment / feature badges ---------- */
+.badges{
+  display:flex; flex-wrap:wrap; gap:2.2mm;
+  margin-top:3mm;
+}
+.badge{
+  font-size:8.6pt;
+  font-weight:600;
+  color: var(--gold-light);
+  background: rgba(55,141,212,.08);
+  border:1px solid var(--line);
+  border-radius:2.5mm;
+  padding:1.6mm 3mm;
+  white-space:nowrap;
+}
+.badge.plain{
+  color: var(--ink-soft);
+  background: rgba(255,255,255,.04);
+  border-color: var(--line-soft);
+}
+
+/* ---------- Notes (fragrance families) ---------- */
+.notes{
+  display:flex; gap:2.5mm; margin-top:3mm;
+}
+.notes .n{
+  flex:1;
+  text-align:center;
+  border:1px solid var(--line-soft);
+  border-radius:3mm;
+  padding:3mm 1mm;
+  background: rgba(255,255,255,.03);
+}
+.notes .n .ttl{ font-size:9.5pt; font-weight:800; color: var(--gold-light); }
+.notes .n .ds{ font-size:7.8pt; color: var(--ink-mute); margin-top:.8mm; line-height:1.45; }
+
+/* ---------- Timeline ---------- */
+.timeline{ margin-top:2mm; }
+.tl-row{
+  display:flex; align-items:center; gap:3mm;
+  padding:2.8mm 0;
+  border-bottom:1px dashed rgba(255,255,255,.08);
+}
+.tl-row:last-child{ border-bottom:none; }
+.tl-row .num{
+  flex:0 0 auto;
+  width:7.5mm; height:7.5mm;
+  border-radius:2.4mm;
+  border:1px solid var(--line);
+  background: rgba(55,141,212,.08);
+  display:flex; align-items:center; justify-content:center;
+  font-size:9pt; font-weight:800; color: var(--gold-light);
+}
+.tl-row .txt{ flex:1; font-size:9.6pt; color: var(--ink-soft); }
+.tl-row .txt b{ color: var(--ink); display:block; font-size:10pt; }
+.tl-row .dur{
+  font-size:8.4pt; font-weight:700; color: var(--gold);
+  white-space:nowrap;
+}
+
+/* ---------- Quote / closing ---------- */
+.quote{
+  position:relative;
+  background: linear-gradient(160deg, rgba(55,141,212,.10) 0%, rgba(14,23,32,.9) 70%);
+  border:1px solid var(--line);
+  border-radius:4.5mm;
+  padding:6mm 5mm;
+  margin-bottom:4.5mm;
+}
+.quote p{
+  font-size:10.3pt;
+  color: var(--ink);
+  line-height:1.9;
+}
+.quote p + p{ margin-top:3mm; }
+.quote .sig{
+  margin-top:4.5mm;
+  padding-top:3mm;
+  border-top:1px solid var(--line);
+  font-size:9pt;
+  color: var(--ink-mute);
+}
+.quote .sig b{ color: var(--gold-light); font-weight:800; display:block; font-size:10pt; }
+
+.cta{
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:4.5mm;
+  padding:5mm 4mm;
+  background: rgba(55,141,212,.07);
+}
+.cta .big{
+  font-size:13pt; font-weight:900; margin-bottom:2mm;
+}
+.cta p{ font-size:9.6pt; color: var(--ink-soft); }
+.cta .btn{
+  display:inline-block;
+  margin-top:4mm;
+  background: var(--grad-gold);
+  color:#0B1117;
+  font-weight:900; font-size:10.5pt;
+  padding:2.8mm 8mm;
+  border-radius:20mm;
+}
+
+/* ---------- Footer ---------- */
+.foot{
+  margin-top:auto;
+  padding-top:3.5mm;
+  border-top:1px solid var(--line-soft);
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:7.8pt;
+  color: var(--ink-mute);
+}
+.foot .b{ color: var(--gold); font-weight:700; letter-spacing:1px; }
+
+/* ============================================================
+   وضع الشاشة — عرض مريح على الموبايل والديسكتوب
+   ============================================================ */
+@media screen{
+  body{
+    padding: clamp(10px, 4vw, 28px) clamp(8px, 3vw, 20px);
+    background:
+      radial-gradient(70% 40% at 50% 0%, rgba(55,141,212,.08) 0%, rgba(7,11,16,0) 60%),
+      #070B10;
+  }
+  .page{
+    height: auto;
+    overflow: visible;
+    border: 1px solid var(--line-soft);
+    border-radius: 5mm;
+    box-shadow: 0 10px 40px rgba(0,0,0,.55);
+    margin-bottom: clamp(14px, 4vw, 26px);
+  }
+  .page::after{ border-radius: 5mm 5mm 0 0; }
+  .page:last-of-type{ margin-bottom:0; }
+}
+
+/* شاشات ضيقة جداً — منع أي تزاحم أفقي */
+@media screen and (max-width: 360px){
+  html, body{ font-size: 10.8pt; }
+  .cover-stats{ flex-wrap: wrap; }
+  .cover-stats .st{ flex: 1 1 40%; }
+  .notes{ flex-wrap: wrap; }
+  .notes .n{ flex: 1 1 28%; }
+  .tl-row{ flex-wrap: wrap; }
+  .tl-row .dur{ margin-right: 10.5mm; }
+  .brand-name{ font-size: 19pt; letter-spacing: 1px; }
+  .cover h1{ font-size: 17pt; }
+}
+
+/* شاشات واسعة — تكبير خفيف للقراءة على الديسكتوب */
+@media screen and (min-width: 900px){
+  :root{ --page-w: 150mm; }
+  html, body{ font-size: 12.5pt; }
+}
+
+/* ============================================================
+   وضع الطباعة — مقاس الـ PDF الثابت 130 × 230 مم
+   ============================================================ */
+@media print{
+  :root{
+    --page-w: 130mm;
+    --page-h: 230mm;
+    --pad-x: 9mm;
+    --pad-y: 12mm;
+  }
+  html, body{
+    background: var(--obsidian);
+    font-size: 11.5pt;
+  }
+  body{ padding:0; }
+  .page{
+    width: 130mm;
+    max-width: 130mm;
+    height: 230mm;
+    min-height: 230mm;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page::after{ border-radius:0; }
+  .page:last-of-type{ page-break-after: auto; break-after: auto; }
+  .card, .roi, .quote, .cta, .tl-row{
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ الغلاف ============================ -->
+<section class="page cover">
+  <div class="cover-top">
+    <div class="brand-mark gold-text">IPC</div>
+    <div class="brand-name gold-text">IPC PERFUMES</div>
+    <div class="brand-tag">المركز الدولي للعطور والتجميل</div>
+    <div class="rule"></div>
+    <h1>الخطة التنفيذية<br>لتطوير التطبيق الأصلي</h1>
+    <p class="cover-sub">
+      خارطة طريق عملية من أربع مراحل لتحويل متجر IPC من صفحة بيع إلى
+      براند عطري له مكانه الدائم على شاشة عميلك.
+    </p>
+
+    <div class="cover-stats">
+      <div class="st">
+        <div class="n gold-text">4</div>
+        <div class="l">مراحل تنفيذ<br>متكاملة</div>
+      </div>
+      <div class="st">
+        <div class="n gold-text">iOS + Android</div>
+        <div class="l">تطبيق أصلي<br>على المتجرين</div>
+      </div>
+      <div class="st">
+        <div class="n gold-text">سلة</div>
+        <div class="l">مزامنة كاملة<br>مع لوحة متجرك</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    مُعدّة خصيصاً لمالك متجر <b>ipcperfumes.com</b><br>
+    وثيقة استشارية — تُقرأ من الموبايل مباشرة
+  </div>
+</section>
+
+<!-- ============================ لماذا التطبيق؟ + ROI ============================ -->
+<section class="page">
+  <div class="page-head">
+    <div class="phase-chip">٪</div>
+    <div class="titles">
+      <div class="kicker">العائد على الاستثمار</div>
+      <h2>ماذا يتغيّر في أرقامك<br>بعد إطلاق التطبيق؟</h2>
+      <div class="sub">مؤشرات قياسية لمتاجر العطور في السوق الخليجي</div>
+    </div>
+  </div>
+
+  <p class="lede">
+    الفرق بين المتجر والتطبيق ليس في الشكل، بل في الأرقام. زائر المتجر يأتي ويغادر،
+    ومستخدم التطبيق يبقى معك على شاشته ويعود بضغطة واحدة.
+  </p>
+
+  <div class="roi">
+    <div class="metric">معدل التحويل — Conversion Rate</div>
+    <div class="vs">
+      <div class="col">
+        <div class="lab">المتجر الإلكتروني</div>
+        <div class="val">1.8<span class="unit">%</span></div>
+      </div>
+      <div class="col app">
+        <div class="lab">التطبيق الأصلي</div>
+        <div class="val">5.4<span class="unit">%</span></div>
+      </div>
+    </div>
+    <div class="note">نفس عدد الزوار، ضِعف إلى ثلاثة أضعاف الطلبات — لأن المستخدم داخل التطبيق مسجّل دخوله ومعروف عنوانه ووسيلة دفعه.</div>
+  </div>
+
+  <div class="roi">
+    <div class="metric">متوسط قيمة السلة — AOV</div>
+    <div class="vs">
+      <div class="col">
+        <div class="lab">المتجر الإلكتروني</div>
+        <div class="val">240<span class="unit">ر.س</span></div>
+      </div>
+      <div class="col app">
+        <div class="lab">التطبيق الأصلي</div>
+        <div class="val">315<span class="unit">ر.س</span></div>
+      </div>
+    </div>
+    <div class="note">زيادة تقارب 30% تأتي من الترشيحات الذكية داخل التطبيق: عطر مكمّل، حجم أكبر، أو طقم هدية.</div>
+  </div>
+
+  <div class="roi">
+    <div class="metric">التخلي عن السلة — Cart Abandonment</div>
+    <div class="vs">
+      <div class="col">
+        <div class="lab">المتجر الإلكتروني</div>
+        <div class="val">70<span class="unit">%</span></div>
+      </div>
+      <div class="col app">
+        <div class="lab">التطبيق الأصلي</div>
+        <div class="val">25<span class="unit">%</span></div>
+      </div>
+    </div>
+    <div class="note">الإشعار المجاني يستعيد السلة المتروكة خلال ساعتين — بدل دفع تكلفة إعلان جديد لنفس العميل.</div>
+  </div>
+
+  <div class="foot">
+    <span class="b">IPC PERFUMES</span>
+    <span>الخطة التنفيذية · صفحة 2</span>
+  </div>
+</section>
+
+<!-- ============================ المرحلة الأولى ============================ -->
+<section class="page">
+  <div class="page-head">
+    <div class="phase-chip">1</div>
+    <div class="titles">
+      <div class="kicker">المرحلة الأولى</div>
+      <h2>تصميم التجربة والواجهات<br>UI / UX Design</h2>
+      <div class="sub">مدة التنفيذ التقديرية: 2 – 3 أسابيع</div>
+    </div>
+  </div>
+
+  <p class="lede">
+    العطر يُباع بالإحساس قبل السعر. لذلك نبني واجهة داكنة ملكية تجعل زجاجة العطر
+    هي البطل على الشاشة، وتختصر الطريق من الرغبة إلى الطلب.
+  </p>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>واجهة داكنة ملكية</h3>
+    <p>هوية بصرية بخلفية عميقة ولمسات ذهبية تمنح المنتج قيمة أعلى في عين العميل، وصور عالية الدقة تعرض تفاصيل الزجاجة والعلبة.</p>
+    <ul class="flist">
+      <li><b>صفحة منتج سينمائية:</b> صورة كبيرة، هرم عطري واضح، ثبات وفوحان.</li>
+      <li><b>قراءة مريحة ليلاً:</b> تباين مدروس يناسب أوقات الذروة في التسوق.</li>
+      <li><b>تنقّل بإبهام واحد:</b> كل الأزرار الأساسية في متناول اليد.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>التصفح حسب النوتة العطرية</h3>
+    <p>عميلك لا يبحث باسم المنتج، بل يبحث عن رائحة يحبها. نمنحه فلترة ذكية تعرض العطور حسب العائلة العطرية والمناسبة والثبات.</p>
+    <div class="notes">
+      <div class="n"><div class="ttl">عود</div><div class="ds">شرقي فاخر<br>للمناسبات</div></div>
+      <div class="n"><div class="ttl">مسك</div><div class="ds">ناعم يومي<br>للعمل</div></div>
+      <div class="n"><div class="ttl">فانيليا</div><div class="ds">دافئ حلو<br>للسهرات</div></div>
+    </div>
+    <ul class="flist">
+      <li>فلترة إضافية: رجالي / نسائي / للجنسين، نيش، مستوحاة، أطفال.</li>
+      <li>فلترة بالسعر تعكس أقسام متجرك الحالية (199 و299 ريال وأقل).</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>الشراء بضغطة واحدة</h3>
+    <p>حفظ العنوان ووسيلة الدفع من أول طلب، ثم يصبح كل طلب لاحق خطوة واحدة فقط — وهنا يتحقق أكبر قفزة في معدل التحويل.</p>
+    <ul class="flist">
+      <li>دخول سريع برقم الجوال أو ببصمة الوجه/الإصبع.</li>
+      <li>إعادة طلب العطر المفضل من سجل المشتريات مباشرة.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <span class="b">IPC PERFUMES</span>
+    <span>المرحلة الأولى · صفحة 3</span>
+  </div>
+</section>
+
+<!-- ============================ المرحلة الثانية ============================ -->
+<section class="page">
+  <div class="page-head">
+    <div class="phase-chip">2</div>
+    <div class="titles">
+      <div class="kicker">المرحلة الثانية</div>
+      <h2>الربط التقني<br>ووسائل الدفع</h2>
+      <div class="sub">مدة التنفيذ التقديرية: 2 أسبوع</div>
+    </div>
+  </div>
+
+  <p class="lede">
+    التطبيق لا يعني لوحة تحكم جديدة ولا مخزوناً منفصلاً. نربطه بلوحة متجرك القائمة
+    على منصة سلة، فتُدار كل الطلبات من مكان واحد كما اعتدت تماماً.
+  </p>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>مزامنة كاملة مع لوحة المتجر</h3>
+    <p>ربط رسمي عبر الواجهات البرمجية لمنصة سلة (ومتاح كذلك لمنصة زد) بتحديث لحظي في الاتجاهين.</p>
+    <ul class="flist">
+      <li><b>المنتجات والأسعار:</b> أي تعديل في اللوحة يظهر فوراً في التطبيق.</li>
+      <li><b>المخزون:</b> كمية واحدة مشتركة، فلا يُباع عطر نفد من الرف.</li>
+      <li><b>الطلبات والشحن:</b> طلبات التطبيق تدخل نفس سير العمل وشركات الشحن.</li>
+      <li><b>الكوبونات والعروض:</b> نفس أكواد الخصم تعمل داخل التطبيق.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>الدفع الفوري والتقسيط</h3>
+    <p>كل وسيلة دفع ناقصة هي سلة متروكة. نُفعّل المحفظة والبطاقة والتقسيط في شاشة دفع واحدة قصيرة.</p>
+    <div class="badges">
+      <span class="badge">Apple&nbsp;Pay</span>
+      <span class="badge">مدى — Mada</span>
+      <span class="badge">Tabby</span>
+      <span class="badge">Tamara</span>
+      <span class="badge">إمكان — Emkan</span>
+      <span class="badge plain">Visa / Mastercard</span>
+      <span class="badge plain">الدفع عند الاستلام</span>
+    </div>
+    <ul class="flist">
+      <li>التقسيط يرفع متوسط السلة في العطور النيش والأطقم الفاخرة تحديداً.</li>
+      <li>عرض قيمة القسط الشهري داخل صفحة المنتج قبل الدفع.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>الحماية والامتثال</h3>
+    <p>اتصال مشفّر بالكامل، والتزام بمتطلبات بوابات الدفع السعودية، دون تخزين أي بيانات بطاقة داخل التطبيق.</p>
+  </div>
+
+  <div class="foot">
+    <span class="b">IPC PERFUMES</span>
+    <span>المرحلة الثانية · صفحة 4</span>
+  </div>
+</section>
+
+<!-- ============================ المرحلة الثالثة ============================ -->
+<section class="page">
+  <div class="page-head">
+    <div class="phase-chip">3</div>
+    <div class="titles">
+      <div class="kicker">المرحلة الثالثة</div>
+      <h2>أدوات تكرار الشراء<br>والنمو</h2>
+      <div class="sub">مدة التنفيذ التقديرية: 2 – 3 أسابيع</div>
+    </div>
+  </div>
+
+  <p class="lede">
+    هنا يتحوّل التطبيق من مصروف إلى أصل. العطر منتج استهلاكي يُعاد شراؤه،
+    والربح الحقيقي في الطلب الثاني والثالث لا في الأول.
+  </p>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>الإشعارات الذكية — تسويق بلا تكلفة إعلانية</h3>
+    <p>رسالة تصل مباشرة إلى شاشة عميلك دون وسيط ودون دفع مقابل كل ظهور.</p>
+    <ul class="flist">
+      <li><b>السلة المتروكة:</b> تذكير تلقائي بعد ساعتين ثم بعد يوم.</li>
+      <li><b>المواسم:</b> رمضان والعيد واليوم الوطني والجمعة البيضاء بحملة مجدولة.</li>
+      <li><b>إعادة الشراء:</b> تذكير بعد 45 – 60 يوماً من شراء العطر نفسه.</li>
+      <li><b>عاد للمخزون:</b> إشعار لمن انتظر عطراً نفدت كميته.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>نقاط الولاء والمكافآت</h3>
+    <p>نظام نقاط واضح يجعل العميل يفضّل الشراء منك بدل المنافس، ويزيد عدد الطلبات في السنة.</p>
+    <ul class="flist">
+      <li>نقاط على كل ريال، وتُصرف كخصم في الطلب التالي.</li>
+      <li>مستويات عضوية (فضي / ذهبي / ماسي) بمزايا وشحن مجاني.</li>
+      <li>نقاط إضافية عند دعوة صديق أو كتابة تقييم للعطر.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>إهداء العطور وكروت المعايدة</h3>
+    <p>العطر أكثر هدية تُشترى في السوق الخليجي. نمنح المشتري مساراً كاملاً للهدية داخل التطبيق.</p>
+    <ul class="flist">
+      <li>تغليف هدية مع اختيار كرت معايدة ونص شخصي.</li>
+      <li>الشحن لعنوان المُهدى إليه مع إخفاء الفاتورة والسعر.</li>
+      <li>بطاقة هدية رقمية بقيمة يختارها العميل.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <span class="b">IPC PERFUMES</span>
+    <span>المرحلة الثالثة · صفحة 5</span>
+  </div>
+</section>
+
+<!-- ============================ المرحلة الرابعة ============================ -->
+<section class="page">
+  <div class="page-head">
+    <div class="phase-chip">4</div>
+    <div class="titles">
+      <div class="kicker">المرحلة الرابعة</div>
+      <h2>الاختبار والنشر<br>على المتجرين</h2>
+      <div class="sub">مدة التنفيذ التقديرية: 1 – 2 أسبوع</div>
+    </div>
+  </div>
+
+  <p class="lede">
+    مرحلة لا تحتمل التساهل: تطبيق بطيء أو مرفوض من المتجر يعني تأجيل الإيراد.
+    لذلك نفصلها كمرحلة مستقلة بمعايير قبول مكتوبة.
+  </p>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>السرعة والاستقرار</h3>
+    <ul class="flist">
+      <li>فتح التطبيق في أقل من ثانيتين على أجهزة متوسطة.</li>
+      <li>تصفح سلس للصور عالية الدقة مع ضغط ذكي يوفّر باقة العميل.</li>
+      <li>اختبار على أحجام شاشات وإصدارات نظام مختلفة قبل الرفع.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>الأمان وحماية البيانات</h3>
+    <ul class="flist">
+      <li>تشفير كامل للاتصال وحماية الحسابات من محاولات الاختراق.</li>
+      <li>سياسة خصوصية وشروط استخدام مطابقة لمتطلبات المتجرين.</li>
+      <li>نسخ احتياطي ومراقبة للأعطال لحظياً بعد الإطلاق.</li>
+    </ul>
+  </div>
+
+  <div class="card accent">
+    <h3><span class="dot"></span>النشر الرسمي</h3>
+    <p>رفع التطبيق باسم IPC PERFUMES على المتجرين مع تجهيز صفحة العرض كاملة.</p>
+    <div class="badges">
+      <span class="badge">App&nbsp;Store</span>
+      <span class="badge">Google&nbsp;Play</span>
+      <span class="badge plain">أيقونة وهوية</span>
+      <span class="badge plain">صور العرض</span>
+      <span class="badge plain">كلمات بحث</span>
+    </div>
+    <ul class="flist">
+      <li>متابعة المراجعة حتى القبول والرد على أي ملاحظات من المتجرين.</li>
+      <li>تسليم حسابات النشر باسمك أنت — الملكية كاملة لك.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <span class="b">IPC PERFUMES</span>
+    <span>المرحلة الرابعة · صفحة 6</span>
+  </div>
+</section>
+
+<!-- ============================ الجدول الزمني والخاتمة ============================ -->
+<section class="page">
+  <div class="page-head">
+    <div class="phase-chip">✦</div>
+    <div class="titles">
+      <div class="kicker">خلاصة التنفيذ</div>
+      <h2>الجدول الزمني<br>وتوصية المستشار</h2>
+      <div class="sub">من التوقيع إلى أول طلب داخل التطبيق</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="num">1</div>
+        <div class="txt"><b>تصميم الواجهات</b>هوية داكنة، نوتات عطرية، شراء بضغطة</div>
+        <div class="dur">2 – 3 أسابيع</div>
+      </div>
+      <div class="tl-row">
+        <div class="num">2</div>
+        <div class="txt"><b>الربط والدفع</b>مزامنة سلة وبوابات الدفع والتقسيط</div>
+        <div class="dur">2 أسبوع</div>
+      </div>
+      <div class="tl-row">
+        <div class="num">3</div>
+        <div class="txt"><b>أدوات النمو</b>إشعارات، ولاء، إهداء</div>
+        <div class="dur">2 – 3 أسابيع</div>
+      </div>
+      <div class="tl-row">
+        <div class="num">4</div>
+        <div class="txt"><b>النشر</b>اختبار، أمان، رفع على المتجرين</div>
+        <div class="dur">1 – 2 أسبوع</div>
+      </div>
+      <div class="tl-row">
+        <div class="num">✦</div>
+        <div class="txt"><b>الإجمالي التقديري</b>مع هامش للمراجعة والاعتماد</div>
+        <div class="dur">7 – 10 أسابيع</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>
+      خلال عشرين عاماً في تطوير المتاجر العربية والخليجية، رأيت نمطاً يتكرر في قطاع
+      العطور تحديداً: المتاجر التي أطلقت تطبيقها مبكراً توقفت عن الدفع المتكرر
+      لاستعادة نفس العميل، بينما بقي غيرها رهينة كلفة الإعلان الصاعدة كل موسم.
+    </p>
+    <p>
+      متجر IPC اليوم يملك ما يحتاجه التطبيق ليعمل من أول يوم: تشكيلة واضحة الأقسام،
+      وعملاء يعيدون الشراء بطبيعة المنتج. الناقص هو القناة التي تبقيك على شاشتهم.
+      توصيتي المهنية: ابدأ بالمرحلتين الأولى والثانية فوراً لتكون جاهزاً قبل الموسم القادم،
+      فكل شهر تأجيل هو قائمة عملاء لا تُبنى وطلبات متكررة لا تُحصّل.
+    </p>
+    <div class="sig">
+      <b>استشاري تطوير التطبيقات والتجارة الإلكترونية</b>
+      خبرة تتجاوز 20 عاماً في بناء البراندات الرقمية بالسوق الخليجي
+    </div>
+  </div>
+
+  <div class="cta">
+    <div class="big gold-text">الخطوة التالية</div>
+    <p>اعتماد الخطة وتحديد موعد جلسة الانطلاق لتسليم هوية التطبيق الأولى خلال أسبوع.</p>
+    <div class="btn">أوافق على البدء</div>
+  </div>
+
+  <div class="foot">
+    <span class="b">IPC PERFUMES</span>
+    <span>ipcperfumes.com · صفحة 7</span>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تطبيق Luxellia Nada الخاص | شراع للتسويق الإلكتروني</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;800&display=swap">
+<style>
+:root{--dk:#15110E;--dk2:#111A23;--cr:#F3F0E6;--gold:#5798CE;--gold2:#3C88C6;--ink:#0E151C;--mute:#6F665C;--line:#9DC3E2}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#2A2622}
+body{font-family:"Cairo","Segoe UI",Tahoma,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:24px 0}
+.slide{width:1280px;height:720px;margin:0 auto 24px;position:relative;overflow:hidden;padding:64px 80px}
+.dark{background:var(--dk);color:#F3F0E6}
+.light{background:var(--cr);color:var(--ink)}
+.goldbg{background:var(--gold);color:var(--ink)}
+.kick{display:inline-block;color:var(--gold2);font-size:14px;padding-bottom:10px;border-bottom:1.5px solid var(--gold);margin-bottom:12px}
+h1,h2,.big{font-family:"Amiri",serif;font-weight:700}
+h2{font-size:46px;line-height:1.3}
+.brandline{position:absolute;bottom:40px;left:80px;font-size:12px;letter-spacing:4px;color:#8F8577}
+.rule{border-top:1px solid var(--line);margin:18px 0 22px}
+/* cover */
+.cover .phone{position:absolute;top:80px;left:94px;width:290px;height:560px;border:2px solid var(--gold);border-radius:36px}
+.cover .phone::before{content:"";position:absolute;top:22px;left:50%;transform:translateX(-50%);width:90px;height:7px;border-radius:6px;background:#203143}
+.cover .phone .bn{position:absolute;top:56px;right:0;left:0;text-align:center;color:var(--gold);font-weight:800;letter-spacing:3px;font-size:15px}
+.cover .phone .blk{position:absolute;right:26px;left:26px;border-radius:14px;background:#131C26}
+.cover .phone .cta{position:absolute;bottom:42px;right:26px;left:26px;height:62px;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+.cover .ring{position:absolute;border:1px solid rgba(87,152,206,.35);border-radius:50%}
+.cover .rr{position:absolute;border:1px solid rgba(87,152,206,.35);border-radius:120px}
+.cover .in{position:absolute;top:150px;right:80px;width:640px}
+.cover .tag{color:var(--gold);letter-spacing:4px;font-size:18px;font-weight:600}
+.cover .tl{width:90px;height:2px;background:var(--gold);margin:18px 0 26px}
+.cover h1{font-size:76px;line-height:1.2;color:#fff}
+.cover p{font-size:22px;color:#87B6DC;margin-top:22px;font-weight:300}
+/* feature grid */
+.fg{display:grid;grid-template-columns:repeat(3,1fr);gap:0 36px}
+.fg div{padding:18px 0;border-bottom:1px solid var(--line)}
+.fg b{display:block;font-size:22px;font-weight:800}
+.fg span{font-size:15px;color:var(--mute)}
+/* two boxes */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:20px}
+.two .bx{padding:30px 34px;border:1px solid var(--line)}
+.two .bx.dk{background:var(--dk);color:#F3F0E6;border-color:var(--dk)}
+.two h3{font-size:24px;font-weight:800;color:var(--gold2);margin-bottom:16px}
+.two .dk h3{color:var(--gold)}
+.two ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.two li{position:relative;padding-right:20px;font-size:16px}
+.two li::before{content:"";position:absolute;right:0;top:.62em;width:8px;height:8px;border-radius:50%;background:currentColor}
+/* statement */
+.stmt .lbl{font-size:22px;font-weight:800}
+.stmt .big{font-size:60px;line-height:1.35;margin-top:110px}
+.stmt .pts{position:absolute;bottom:70px;right:80px;left:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.stmt .pts span{border-top:1.5px solid var(--ink);padding-top:16px;font-size:18px;font-weight:600}
+/* ideas */
+.ideas h2{color:var(--gold);margin-bottom:26px}
+.ideas .g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ideas .c{background:var(--dk2);border:1px solid #182532;border-radius:10px;padding:24px 26px;min-height:200px}
+.ideas .c i{display:block;font-style:normal;color:var(--gold);font-size:36px;font-weight:800;line-height:1.1}
+.ideas .c b{display:block;font-size:21px;font-weight:800;margin:8px 0 6px}
+.ideas .c span{font-size:15px;color:#87B6DC}
+/* tables */
+table{width:100%;border-collapse:collapse}
+th{font-size:14px;font-weight:700;color:var(--gold2);text-align:right;padding:8px 6px;border-bottom:1.5px solid var(--gold)}
+td{font-size:15.5px;padding:14px 6px;border-bottom:1px solid #BBD5EB;text-align:right}
+td b{font-weight:800}
+tr.tot td{font-weight:800}
+.tnote{font-size:12px;color:var(--mute);margin-top:10px}
+/* closing */
+.end .frame{position:absolute;inset:40px;border:1px solid #1B3F5D}
+.end .in{position:absolute;top:0;bottom:0;right:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.end .tag{color:var(--gold);letter-spacing:4px;font-size:18px;font-weight:600}
+.end .tl{width:80px;height:2px;background:var(--gold);margin:18px auto 22px}
+.end h1{font-size:68px;color:#fff}
+.end p{font-size:22px;color:#87B6DC;margin-top:18px;font-weight:300}
+/* price */
+.pr{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;margin-top:20px}
+.pr .bx{background:var(--dk);color:#F3F0E6;padding:36px 40px}
+.pr .was{font-size:17px;color:#87B6DC}
+.pr .now{font-family:"Amiri",serif;font-size:70px;color:#fff;line-height:1.2}
+.pr .now small{font-size:24px;color:var(--gold)}
+.pr .save{display:inline-block;background:var(--gold);color:var(--ink);font-weight:800;font-size:16px;padding:2px 16px;margin-top:8px}
+.pr .side{border:1px solid var(--line);padding:36px 40px;display:flex;flex-direction:column;gap:16px;font-size:17px}
+.pr .pay{display:flex;gap:10px;flex-wrap:wrap}
+.pr .pay i{font-style:normal;border:1px solid var(--gold2);color:var(--gold2);padding:2px 16px;font-weight:800}
+@media (max-width:1300px){body{padding:0}.slide{width:100%;height:auto;min-height:56.25vw;margin:0;padding:34px 22px 60px}.cover .phone,.cover .ring,.cover .rr{display:none}.cover .in{position:static;width:auto;padding-top:40px}.cover h1{font-size:46px}.fg,.ideas .g,.two,.pr{grid-template-columns:1fr}.stmt .big{font-size:38px;margin-top:40px}.stmt .pts{position:static;grid-template-columns:1fr;margin-top:30px;gap:14px}.brandline{left:22px;bottom:20px}.end .in{position:relative;min-height:60vh}.end h1{font-size:44px}table{font-size:13px}.tw{overflow-x:auto}}
+@page{size:1280px 720px;margin:0}
+@media print{html,body{background:var(--dk);padding:0}.slide{margin:0;break-after:page}}
+</style>
+</head>
+<body>
+
+<section class="slide dark cover">
+  <i class="rr" style="width:520px;height:520px;bottom:-250px;left:-70px"></i>
+  <i class="ring" style="width:320px;height:320px;bottom:-140px;left:-20px"></i>
+  <div class="phone"><div class="bn">LUXELLIA</div><i class="blk" style="top:110px;height:250px"></i><i class="blk" style="top:380px;height:100px;left:150px"></i><div class="cta">حصري VIP خصم</div></div>
+  <div class="in">
+    <div class="tag">LUXELLIA NADA · VIP</div>
+    <div class="tl"></div>
+    <h1>تطبيق Luxellia Nada الخاص</h1>
+    <p>الفخامة في جيب كل عميلة، على App Store وGoogle Play</p>
+  </div>
+</section>
+
+<section class="slide light">
+  <span class="kick">٠١ · التجربة</span>
+  <h2>تجربة العميلة داخل التطبيق</h2>
+  <div class="rule"></div>
+  <div class="fg">
+    <div><b>قسم VIP</b><span>وصول مبكر وعروض حصرية ودعم مخصص</span></div>
+    <div><b>شراء ودفع آمن</b><span>سلة ودفع إلكتروني وتتبع الطلب لحظيًا</span></div>
+    <div><b>كتالوج فاخر</b><span>صور عالية الجودة وبحث وفلترة سريعة</span></div>
+    <div><b>كود إحالة</b><span>كل عميلة تجلب عميلة جديدة</span></div>
+    <div><b>المفضلة والتنبيهات</b><span>إشعار عند توفر المنتج أو نزول سعره</span></div>
+    <div><b>نقاط وولاء</b><span>مستويات Silver وGold وPlatinum</span></div>
+  </div>
+  <div class="brandline">LUXELLIA NADA · VIP</div>
+</section>
+
+<section class="slide light">
+  <span class="kick">٠٢ · النمو</span>
+  <h2>الخصومات والداش بورد</h2>
+  <div class="two">
+    <div class="bx dk"><h3>خصومات ذكية</h3><ul><li>إشعارات Push محددة لكل العملاء أو لشرائح محددة</li><li>أكواد خصم بتاريخ انتهاء</li><li>عروض مجدولة وعيد ميلاد العميل</li><li>قياس نتيجة كل حملة</li></ul></div>
+    <div class="bx"><h3>داش بورد خاصة بها</h3><ul><li>المبيعات والمنتجات الأكثر طلبًا</li><li>العملاء وقيمة كل عميل</li><li>إنشاء الحملات وإرسالها</li><li>تقارير Excel وPDF</li></ul></div>
+  </div>
+  <div class="brandline">LUXELLIA NADA · VIP</div>
+</section>
+
+<section class="slide goldbg stmt">
+  <div class="lbl">قيمة البراند والاستثمار</div>
+  <div class="big">التطبيق ليس متجرًا ثانيًا، بل أصل رقمي يرفع قيمة البراند</div>
+  <div class="pts"><span>تقييم أعلى للشركة بعملاء نشطين</span><span>إعلانات أقل بإشعارات وإحالات</span><span>قاعدة عملاء وبيانات يملكها البراند</span></div>
+</section>
+
+<section class="slide dark ideas">
+  <h2>أفكار إبداعية تميّز التطبيق</h2>
+  <div class="g">
+    <div class="c"><i>01</i><b>حصرية إصدارات Drops</b><span>قطع محدودة بعدّاد تنازلي لأعضاء VIP أولًا</span></div>
+    <div class="c"><i>02</i><b>تجربة بالواقع المعزز</b><span>تجرّب المنتج على نفسها قبل الشراء</span></div>
+    <div class="c"><i>03</i><b>مستشارة شخصية</b><span>شات مباشر يقترح وينسّق القطع</span></div>
+    <div class="c"><i>04</i><b>عضوية بدعوة فقط</b><span>بطاقة VIP رقمية في Apple Wallet وGoogle Wallet</span></div>
+    <div class="c"><i>05</i><b>هدية بلمسة شخصية</b><span>تغليف فاخر ورسالة مع الطلب</span></div>
+    <div class="c"><i>06</i><b>مفاجآت الولاء</b><span>هدايا في المناسبات وعند كل مستوى جديد</span></div>
+  </div>
+</section>
+
+<section class="slide light">
+  <span class="kick">٠٣ · إلهام</span>
+  <h2>أمثلة من متاجر كبرى</h2>
+  <div class="tw"><table style="margin-top:14px">
+    <thead><tr><th style="width:18%">المتجر</th><th>الفكرة في تطبيقه</th><th style="width:30%">ما نستفيده</th></tr></thead>
+    <tbody>
+      <tr><td><b>Sephora</b></td><td>برنامج Beauty Insider بمستويات، وتجربة المكياج افتراضيًا</td><td>مستويات VIP وتجربة قبل الشراء</td></tr>
+      <tr><td><b>Nike SNKRS</b></td><td>إصدارات محدودة بتوقيت محدد وأولوية للأعضاء</td><td>ندرة وحماس حول كل إصدار</td></tr>
+      <tr><td><b>Net-a-Porter</b></td><td>عضوية EIP للعملاء الكبار وخدمة تسوق شخصية</td><td>خدمة VIP فاخرة شخصية</td></tr>
+      <tr><td><b>Starbucks</b></td><td>نقاط على كل شراء وطلب مسبق من التطبيق</td><td>عادة شراء متكررة وولاء</td></tr>
+    </tbody>
+  </table></div>
+  <div class="brandline">LUXELLIA NADA · VIP</div>
+</section>
+
+<section class="slide light">
+  <span class="kick">٠٤ · العائد</span>
+  <h2>توقعات الأرباح بعد إطلاق التطبيق</h2>
+  <div class="tw"><table style="margin-top:10px">
+    <thead><tr><th>البند (شهريًا)</th><th style="width:20%">متحفظ</th><th style="width:20%">متوقع</th><th style="width:20%">متفائل</th></tr></thead>
+    <tbody>
+      <tr><td>طلبات التطبيق</td><td>150</td><td>300</td><td>600</td></tr>
+      <tr><td>متوسط قيمة الطلب</td><td>1,000</td><td>1,000</td><td>1,000</td></tr>
+      <tr><td>الإيرادات</td><td>150,000</td><td>300,000</td><td>600,000</td></tr>
+      <tr><td>هامش الربح الإجمالي</td><td>55%</td><td>60%</td><td>65%</td></tr>
+      <tr><td>تكلفة الخصومات</td><td>10%</td><td>8%</td><td>7%</td></tr>
+      <tr><td>رسوم الدفع</td><td>2.5%</td><td>2.5%</td><td>2.5%</td></tr>
+      <tr class="tot"><td>صافي الربح قبل المصروفات الثابتة</td><td>63,750</td><td>148,500</td><td>333,000</td></tr>
+    </tbody>
+  </table></div>
+  <p class="tnote">أرقام استرشادية بعملة البراند، تُعدّل بأرقام الموقع الفعلية، ولا تشمل تكلفة التطوير والتسويق.</p>
+  <div class="brandline">LUXELLIA NADA · VIP</div>
+</section>
+
+<section class="slide light">
+  <span class="kick">٠٥ · الجدول</span>
+  <h2>مراحل التنفيذ</h2>
+  <div class="tw"><table style="margin-top:14px">
+    <thead><tr><th style="width:22%">المرحلة</th><th>المحتوى</th><th style="width:22%">المدة</th></tr></thead>
+    <tbody>
+      <tr><td><b>الاكتشاف</b></td><td>المتطلبات وتحليل الموقع</td><td>أسبوع</td></tr>
+      <tr><td><b>التصميم</b></td><td>UI/UX بهوية البراند</td><td>1-2 أسبوع</td></tr>
+      <tr><td><b>التطوير</b></td><td>التطبيق والباك إند والداش بورد</td><td>5-7 أسابيع</td></tr>
+      <tr><td><b>الاختبار</b></td><td>الأداء والأمان وتجربة المستخدم</td><td>أسبوع</td></tr>
+      <tr><td><b>النشر</b></td><td>App Store وGoogle Play</td><td>أسبوع</td></tr>
+    </tbody>
+  </table></div>
+  <div class="brandline">LUXELLIA NADA · VIP</div>
+</section>
+
+<section class="slide dark end">
+  <div class="frame"></div>
+  <div class="in">
+    <div class="tag">LUXELLIA NADA · VIP</div>
+    <div class="tl"></div>
+    <h1>نبدأ بجلسة اكتشاف</h1>
+    <p>نحدد المتطلبات النهائية، ونثبّت التصميم والميزانية</p>
+  </div>
+</section>
+
+</body>
+</html>

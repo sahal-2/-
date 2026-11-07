@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>خطة إطلاق 90 يوماً – World of Beauty</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f8fb;--card:#fff;--ink:#0b1e33;--mut:#5e6f82;--rg:#0E66B0;--plum:#0A3D6B;--gold:#7FBCEB;--line:#dde6ef;--ok:#0f9d78;--neg:#d63c3c;--soft:#eaf1f8;--grad:linear-gradient(120deg,#0A2A4A 0%,#0E66B0 55%,#7FBCEB 100%);--hero:#071A2E;--shadow:0 12px 32px rgba(14,102,176,.11);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07131f;--card:#0c1d2e;--ink:#eef3f8;--mut:#9fb4c8;--rg:#5ba8e6;--plum:#9cc9ee;--gold:#c9dff3;--line:#1d3550;--ok:#44d1a4;--neg:#ff7a7a;--soft:#10263b;--hero:#040b13;--shadow:0 12px 32px rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#07131f;--card:#0c1d2e;--ink:#eef3f8;--mut:#9fb4c8;--rg:#5ba8e6;--plum:#9cc9ee;--gold:#c9dff3;--line:#1d3550;--ok:#44d1a4;--neg:#ff7a7a;--soft:#10263b;--hero:#040b13;--shadow:0 12px 32px rgba(0,0,0,.5);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',system-ui,'Segoe UI',Tahoma,sans-serif;line-height:1.75}
+.wrap{max-width:1060px;margin:auto;padding:0 18px}
+.hero{background:var(--hero);color:#F4F1E2;padding:64px 0 74px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(75px)}
+.hero:before{width:380px;height:380px;background:#2F8BD8;opacity:.5;top:-150px;inset-inline-end:-50px}
+.hero:after{width:300px;height:300px;background:#F4F1E2;opacity:.3;bottom:-160px;inset-inline-start:-30px}
+.hero .in{position:relative;z-index:1}
+.eyebrow{display:inline-block;border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:2px 14px;font-size:13px;letter-spacing:.06em;background:rgba(255,255,255,.07)}
+.hero h1{font-size:clamp(31px,7vw,56px);margin:14px 0 12px;font-weight:900;line-height:1.25}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,#9CC9EE,#F4F1E2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:670px;margin:0;opacity:.88;font-size:17px}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:30px}
+.big div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:14px 18px;backdrop-filter:blur(8px)}
+.big b{display:block;font-size:29px;font-weight:900;background:linear-gradient(120deg,#9CC9EE,#F4F1E2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.big span{font-size:13px;opacity:.8}
+section{padding:40px 0 6px}
+.sn{display:inline-block;font-size:13px;font-weight:800;color:var(--rg);letter-spacing:.1em}
+h2{font-size:29px;margin:0 0 4px;font-weight:900}
+.sub{color:var(--mut);margin:0 0 18px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px 20px;box-shadow:var(--shadow);transition:transform .2s}
+.card:hover{transform:translateY(-3px)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card ul{margin:6px 0 0;padding-inline-start:18px}.card li{margin:3px 0;font-size:15px}
+.kpi{text-align:center;position:relative;overflow:hidden}
+.kpi:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:var(--grad)}
+.kpi b{display:block;font-size:26px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi span{font-size:13px;color:var(--mut)}
+.tabs{display:inline-flex;gap:4px;background:var(--soft);padding:4px;border-radius:99px;margin-bottom:14px}
+.tabs button{font:inherit;border:0;background:transparent;color:var(--ink);padding:7px 22px;border-radius:99px;cursor:pointer}
+.tabs button.on{background:var(--grad);color:#fff;font-weight:800}
+.bars{display:flex;gap:30px;align-items:flex-end;height:220px;padding:16px 6px 0;border-bottom:1px solid var(--line)}
+.col{flex:1;display:flex;height:100%}.pair{display:flex;gap:8px;align-items:flex-end;height:100%;width:100%;justify-content:center}
+.bar{width:36%;max-width:58px;border-radius:14px 14px 0 0;transition:height .5s;position:relative}
+.bar.rev{background:linear-gradient(180deg,var(--rg),var(--gold))}.bar.net{background:linear-gradient(180deg,#2bbf97,#0c8f6f)}.bar.neg{background:var(--neg)}
+.bar i{position:absolute;top:-21px;left:50%;transform:translateX(-50%);font-size:11.5px;font-style:normal;white-space:nowrap;color:var(--mut);font-weight:700}
+.lbl{display:flex;gap:30px;margin-top:6px}.lbl div{flex:1;text-align:center;font-size:13px;color:var(--mut)}
+.leg{display:flex;gap:14px;font-size:13px;color:var(--mut);margin-top:8px;flex-wrap:wrap}.leg s{display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:5px}
+svg text{fill:var(--mut);font-family:inherit;font-size:11px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+th{color:var(--plum);font-weight:800}
+td.n,th.n{text-align:center}.scroll{overflow-x:auto}.neg{color:var(--neg);font-weight:800}.pos{color:var(--ok);font-weight:800}
+.tag{display:inline-block;background:var(--grad);color:#fff;border-radius:99px;padding:0 12px;font-size:12px;font-weight:800;margin-inline-end:6px}
+.m{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.m .card{border-top:5px solid var(--rg)}
+.goal{background:var(--hero);color:#F4F1E2;border-radius:26px;padding:22px 26px;margin-top:14px;border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden}
+.goal:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:#2F8BD8;filter:blur(80px);opacity:.4;inset-inline-start:-60px;bottom:-110px}
+.goal h3{margin:0 0 6px;position:relative}.goal ul{margin:4px 0 0;padding-inline-start:20px;position:relative}.goal li{margin:4px 0}
+.cel{border-top:5px solid var(--gold)!important}
+.cel .ava{width:54px;height:54px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:22px;margin-bottom:8px}
+.cel .fl{font-size:13px;color:var(--mut)}
+.cel .res{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px;text-align:center}
+.cel .res div{background:var(--soft);border-radius:12px;padding:6px 2px}.cel .res b{display:block;font-size:16px}.cel .res span{font-size:11px;color:var(--mut)}
+.note{font-size:13px;color:var(--mut);background:var(--soft);border-radius:16px;padding:10px 14px;margin-top:14px}
+.warn{border:2px solid var(--gold)}
+footer{padding:34px 0 48px;color:var(--mut);font-size:13px}
+.themebtn{position:fixed;inset-inline-start:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);z-index:40;font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:4px 14px;cursor:pointer;box-shadow:var(--shadow)}
+</style>
+</head>
+<body>
+<button class="themebtn" onclick="tg()">◐ الوضع</button>
+
+<header class="hero"><div class="wrap in">
+<span class="eyebrow">WORLD OF BEAUTY · خطة إطلاق 90 يوماً</span>
+<h1>انطلاقة <em>متجر الجمال</em> بأرباح من الشهر الأول وتصاعد يومي</h1>
+<p>خطة إطلاق متكاملة لمتجر الشنط والإكسسوارات والمستحضرات التجميلية وزيوت الشعر: SEO وسوشيال ميديا وحملات إعلانية و4 مشاهير تبدأ متابعاتهم من 300 ألف. مع المبيعات والأرباح المتوقعة يوماً بيوم. الفترة: نوفمبر 2026 – يناير 2027.</p>
+<div class="big" id="hb"></div>
+</div></header>
+
+<main class="wrap">
+
+<section>
+<span class="sn">01</span><h2>نقطة الانطلاق</h2>
+<p class="sub">من فحص رابط المتجر salla.sa/world-of-beauty2030</p>
+<div class="grid g2">
+<div class="card"><h3>ما هو جاهز</h3><ul>
+<li>متجر مُنشأ على سلة، وحسابات إنستغرام وX قائمة باسم world.of.beauty2030</li>
+<li>أربع فئات منتجات تكمل بعضها: شنط، إكسسوارات، مستحضرات تجميل، زيوت شعر</li>
+<li>قابلية ممتازة للباقات والهدايا ورفع قيمة الطلب (حقيبة + إكسسوار، روتين شعر، بوكس جمال)</li>
+<li>سوق نشط طوال الموسم: الجمعة البيضاء، هدايا نهاية السنة، وما قبل رمضان</li>
+</ul></div>
+<div class="card warn"><h3>ما يجب إنجازه قبل يوم الإطلاق</h3><ul>
+<li>المتجر حالياً في وضع الصيانة ويظهر باسم «Reva»، بينما الحسابات باسم World of Beauty: يلزم اعتماد اسم واحد على المتجر وكل الحسابات (وحساب X مكتوب «beauuty» بحرف زائد)</li>
+<li>رفع 80 منتجاً على الأقل بصور وأوصاف ومخزون فعلي لكل فئة</li>
+<li>تفعيل تابي/تمارا ومدى وأبل باي والدفع عند الاستلام، وشحن خلال 1–3 أيام</li>
+<li>تفعيل التتبع (GA4 وبكسلات ميتا وتيك توك وسناب)، وروابط التواصل وزر واتساب</li>
+<li>سياسات الاستبدال والاسترجاع وعنوان ووصف عربي لكل صفحة</li>
+</ul></div>
+</div>
+</section>
+
+<section>
+<span class="sn">02</span><h2>المبيعات والأرباح المتوقعة</h2>
+<p class="sub">«الهدف» هو سيناريو الخطة: صافي ربح لا يقل عن 30 ألف ر.س في الشهر الأول ثم تصاعد يومي</p>
+<div class="tabs" id="tabs"><button data-s="c">متحفظ</button><button data-s="b" class="on">الهدف</button><button data-s="o">متفائل</button></div>
+<div class="grid g4" id="kpis"></div>
+<div class="card" style="margin-top:14px"><h3>صافي الربح اليومي خلال 90 يوماً</h3>
+<svg id="dl" viewBox="0 0 640 240" width="100%" role="img" aria-label="منحنى صافي الربح اليومي"></svg>
+<div class="leg"><span><s style="background:var(--rg)"></s>صافي الربح اليومي (ر.س)</span><span><s style="background:var(--gold)"></s>بداية كل شهر</span></div></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h3>الأرباح التراكمية</h3><div class="scroll"><table id="cum"></table></div></div>
+<div class="card scroll"><h3>الجدول الشهري</h3><table id="tbl"></table></div>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="bars" id="bars"></div>
+<div class="lbl" id="lbl"><div>الشهر 1 · نوفمبر</div><div>الشهر 2 · ديسمبر</div><div>الشهر 3 · يناير</div></div>
+<div class="leg"><span><s style="background:var(--rg)"></s>المبيعات</span><span><s style="background:#2bbf97"></s>صافي الربح</span><span><s style="background:var(--neg)"></s>خسارة</span></div>
+</div>
+<div class="goal" id="goal"></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h3>ما يجب أن يتحقق للوصول إلى 30 ألف في الشهر الأول</h3><ul>
+<li>حوالي 1,450 طلباً في 30 يوماً (≈ 48 طلباً يومياً)</li>
+<li>أكثر من 65% منها من حملات المشاهير الثلاثة المنطلقين في الشهر الأول</li>
+<li>متوسط قيمة طلب 140 ر.س وهامش 50% قبل الشحن</li>
+<li>افتتاح المتجر بمخزون جاهز قبل 11.11، وشحن سريع</li>
+<li>تعاقد المشاهير وتسليم المحتوى خلال أول أسبوعين</li></ul></div>
+<div class="card"><h3>وإذا تحقق أقل من المتوقع؟</h3><p style="margin:4px 0;font-size:15px">السيناريو «المتحفظ» يفترض تحقق 60% فقط من الطلبات: يبقى المتجر رابحاً لكن الشهر الأول يكون قريباً من نقطة التعادل ثم يتصاعد. لذلك نراجع أداء كل مشهور وكل حملة أسبوعياً، وننقل الجهد فوراً إلى الأفضل.</p></div>
+</div>
+<div class="note">صافي الربح هو ما يتبقى بعد تكلفة المنتجات والتغليف والشحن ورسوم الدفع وكل تكاليف التسويق. الأرقام أهداف وتقديرات تخطيطية مبنية على افتراضات (متوسط الطلب 140 ر.س، هامش 50%) لأن المنتجات والأسعار لم تُعرض بعد، وليست ضماناً. تُحدَّث ببيانات المتجر الفعلية بعد أول أسبوعين.</div>
+</section>
+
+<section data-sec="influencers">
+<span class="sn">03</span><h2>المشاهير الأربعة</h2>
+<p class="sub">تبدأ متابعاتهم من 300 ألف: ثلاثة في الشهر الأول لانطلاقة قوية، والرابعة في الشهر الثاني. الأرقام لكل مشهور بحسب السيناريو. تُحدد الأسماء الحقيقية عند التواصل.</p>
+<div class="grid g3" id="cel"></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><h3>ما يحصل عليه كل مشهور</h3><ul><li>بوكس منتجات من الفئات الأربع باختياره</li><li>كود خصم خاص بجمهوره</li><li>«كبسولة» أو باقة محدودة باسمه في المتجر</li><li>إمكانية أن يصبح سفيراً للعلامة بعد الحملة الأولى</li></ul></div>
+<div class="card"><h3>ضوابط المحتوى</h3><ul><li>تجربة حقيقية وبلا وعود علاجية للشعر والبشرة</li><li>إعلان واضح أنه تعاون</li><li>حق إعادة استخدام المقاطع في المتجر والإعلانات</li><li>رابط وكود مستقلان لقياس نتيجة كل واحد بدقة</li></ul></div>
+</div>
+</section>
+
+<section data-sec="seo">
+<span class="sn">04</span><h2>خطة SEO</h2>
+<p class="sub">الهدف: متجر جديد يبني حضوره في البحث من اليوم الأول</p>
+<div class="m">
+<div class="card"><span class="tag">الشهر 1</span><b>الأساس</b><ul><li>عنوان: «World of Beauty | شنط وإكسسوارات ومستحضرات تجميل وزيوت شعر»</li><li>أقسام واضحة بوصف 300 كلمة: شنط، إكسسوارات، مكياج، العناية بالشعر</li><li>وصف فريد لكل منتج وصور بنصوص بديلة</li><li>Product Schema وربط Search Console</li></ul></div>
+<div class="card"><span class="tag">الشهر 2</span><b>الكلمات والمحتوى</b><ul><li>كلمات: «زيت شعر طبيعي»، «شنط نسائية»، «إكسسوارات ذهبية»، «بوكس هدية جمال»</li><li>8 مقالات: روتين العناية بالشعر في الشتاء، دليل اختيار الحقيبة</li><li>أسئلة شائعة بأسئلة العملاء الحقيقية</li></ul></div>
+<div class="card"><span class="tag">الشهر 3</span><b>السلطة والمواسم</b><ul><li>صفحات موسمية: «هدايا رمضان»، «بوكسات الجمال»</li><li>15 رابطاً من مدونات جمال وموضة سعودية</li><li>جمع تقييمات حقيقية بعد 7 أيام من الاستلام</li></ul></div>
+</div>
+<div class="card scroll" style="margin-top:14px"><table>
+<tr><th>مؤشر SEO (الهدف)</th><th class="n">الشهر 1</th><th class="n">الشهر 2</th><th class="n">الشهر 3</th></tr>
+<tr><td>زيارات من البحث</td><td class="n">600</td><td class="n">2,500</td><td class="n">6,000</td></tr>
+<tr><td>كلمات في أول 20 نتيجة</td><td class="n">10</td><td class="n">50</td><td class="n">120</td></tr>
+<tr><td>طلبات من البحث</td><td class="n">30</td><td class="n">150</td><td class="n">420</td></tr>
+</table></div>
+</section>
+
+<section data-sec="social">
+<span class="sn">05</span><h2>السوشيال ميديا</h2>
+<p class="sub">قبل الإطلاق بأسبوعين نبني جمهوراً ينتظر الافتتاح، ثم نحوّله إلى طلبات</p>
+<div class="grid g3">
+<div class="card"><h3>TikTok + Instagram Reels</h3><ul><li>«ماذا في حقيبتي؟» وإطلالات بالإكسسوارات</li><li>تجربة زيوت الشعر: قبل وبعد حقيقي</li><li>فتح بوكس الجمال وردود الفعل</li></ul></div>
+<div class="card"><h3>Snapchat</h3><ul><li>العد التنازلي لافتتاح المتجر</li><li>تجهيز الطلبات والكواليس</li><li>عروض حصرية لمتابعي سناب</li></ul></div>
+<div class="card"><h3>Instagram + X</h3><ul><li>Stories: تصويت وأسئلة الجمهور</li><li>مسابقة الافتتاح ببوكس هدايا</li><li>إعادة نشر صور العميلات (UGC)</li></ul></div>
+</div>
+<div class="grid g4" style="margin-top:14px">
+<div class="card kpi"><b>4-3-3</b><span>40% إلهام، 30% تجارب، 30% بيع</span></div>
+<div class="card kpi"><b>+40K</b><span>متابع جديد خلال 90 يوماً</span></div>
+<div class="card kpi"><b>3×</b><span>فيديو أسبوعياً لكل منصة</span></div>
+<div class="card kpi"><b>80+</b><span>محتوى من العميلات (UGC)</span></div>
+</div>
+</section>
+
+<section data-sec="ads">
+<span class="sn">06</span><h2>الحملات الإعلانية</h2>
+<p class="sub">إطلاق بموجة قوية مع المشاهير، ثم تتبدل الحملات مع المواسم</p>
+<div class="m">
+<div class="card"><span class="tag">نوفمبر</span><b>الافتتاح والجمعة البيضاء</b><ul><li>إطلاق المتجر مع المشاهير الثلاثة في الأسبوع الأول</li><li>عروض 11.11 والجمعة البيضاء بباقات «شنطة + إكسسوار» و«روتين شعر»</li><li>إعادة استهداف كل زائر وصاحب سلة متروكة</li></ul></div>
+<div class="card"><span class="tag">ديسمبر</span><b>الشتاء والهدايا</b><ul><li>حملة شعر الشتاء وزيوت الترطيب مع الخبيرة</li><li>بوكسات هدايا نهاية السنة</li><li>رسائل واتساب للعملاء بعد 20 يوماً من الشراء</li></ul></div>
+<div class="card"><span class="tag">يناير</span><b>قبل رمضان</b><ul><li>هدايا رمضان وبوكسات الجمال</li><li>مجموعات الشنط والإكسسوارات للمناسبات</li><li>تقرير 90 يوماً وخطة الربع التالي</li></ul></div>
+</div>
+<div class="grid g3" style="margin-top:14px">
+<div class="card"><h3>المنصات</h3><ul><li>ميتا (إنستغرام وفيسبوك)</li><li>تيك توك وسناب شات</li><li>جوجل (بحث وتسوق)</li></ul></div>
+<div class="card"><h3>رفع قيمة الطلب</h3><ul><li>باقات الفئات الأربع</li><li>شحن مجاني فوق مبلغ معين</li><li>هدية صغيرة عند تجاوز مبلغ محدد</li></ul></div>
+<div class="card"><h3>رفع التحويل</h3><ul><li>تابي/تمارا والدفع عند الاستلام</li><li>تقييمات وصور عميلات في كل منتج</li><li>تتبع الشحنة ومدة توصيل واضحة</li></ul></div>
+</div>
+</section>
+
+<section data-sec="design">
+<span class="sn">07</span><h2>صناعة المحتوى والتصميم</h2>
+<p class="sub">محتوى بهوية واحدة يخدم السوشيال والإعلانات والمتجر في نفس الوقت</p>
+<div class="grid g3">
+<div class="card"><h3>الهوية البصرية للمحتوى</h3><ul><li>قوالب جاهزة للمنشورات والقصص والغلاف</li><li>ألوان وخطوط ثابتة تعكس هوية المتجر</li><li>بانرات للمتجر لكل موسم وعرض</li></ul></div>
+<div class="card"><h3>الفيديو القصير</h3><ul><li>فيديوهات منتجات بإضاءة احترافية</li><li>مقاطع «قبل وبعد» وتجارب حقيقية</li><li>نسخ قصيرة جاهزة للإعلانات</li></ul></div>
+<div class="card"><h3>تصاميم الحملات</h3><ul><li>3 نسخ لكل إعلان لاختبار الأفضل</li><li>تصاميم العروض والمناسبات</li><li>صور منتجات بخلفيات موحدة للمتجر</li></ul></div>
+</div>
+<div class="grid g4" style="margin-top:14px">
+<div class="card kpi"><b>12</b><span>تصميم شهريًا</span></div>
+<div class="card kpi"><b>4</b><span>فيديو قصير شهريًا</span></div>
+<div class="card kpi"><b>3</b><span>نسخ لكل إعلان</span></div>
+<div class="card kpi"><b>1</b><span>هوية موحدة لكل القنوات</span></div>
+</div>
+</section>
+
+<section>
+<span class="sn">08</span><h2>الجدول الزمني والمتابعة</h2>
+<div class="grid g2">
+<div class="card scroll"><table>
+<tr><th>الفترة</th><th>الأعمال</th></tr>
+<tr><td>أسبوعان قبل الإطلاق</td><td>اعتماد الاسم، رفع المنتجات، الدفع والشحن، التتبع، عد تنازلي، التعاقد مع المشاهير</td></tr>
+<tr><td>أسبوع 1–2</td><td>الافتتاح مع المشاهير الثلاثة، 11.11، أول حملات ميتا وتيك توك وسناب</td></tr>
+<tr><td>أسبوع 3–4</td><td>الجمعة البيضاء، إعادة الاستهداف، رسائل واتساب للعملاء</td></tr>
+<tr><td>شهر 2</td><td>المشهورة الرابعة، حملات الشتاء والهدايا، المقالات</td></tr>
+<tr><td>شهر 3</td><td>حملات رمضان، البوكسات، التقرير الختامي</td></tr>
+</table></div>
+<div class="card scroll"><table>
+<tr><th>المؤشر</th><th class="n">الهدف</th><th class="n">نراجع إذا</th></tr>
+<tr><td>الطلبات اليومية في الشهر الأول</td><td class="n">48</td><td class="n">أقل من 30 لثلاثة أيام</td></tr>
+<tr><td>متوسط قيمة الطلب</td><td class="n">140 ر.س</td><td class="n">أقل من 115</td></tr>
+<tr><td>طلبات كود كل مشهور في أول 7 أيام</td><td class="n">حسب بطاقته</td><td class="n">أقل من 50%</td></tr>
+<tr><td>العملاء العائدون خلال 45 يوماً</td><td class="n">18%</td><td class="n">أقل من 9%</td></tr>
+</table></div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">أُعدت لمتجر World of Beauty · الأرقام أهداف وتقديرات تُحدَّث ببيانات المتجر الفعلية.</div></footer>
+
+<script>
+function tg(){var r=document.documentElement,d=matchMedia('(prefers-color-scheme: dark)').matches,c=r.getAttribute('data-theme')||(d?'dark':'light');r.setAttribute('data-theme',c==='dark'?'light':'dark')}
+var M=3;var MN=['نوفمبر','ديسمبر','يناير'];var PL='90 يوماً';
+var f=function(n){return Math.round(n).toLocaleString('en-US')};
+var D={"c":{"s":0.6,"o":[870,1290,1800],"r":[121800,180600,252000],"n":[3760,13920,26400]},"b":{"s":1,"o":[1450,2150,3000],"r":[203000,301000,420000],"n":[31600,55200,84000]},"o":{"s":1.25,"o":[1813,2688,3750],"r":[253820,376320,525000],"n":[49024,81024,120000]}};
+var DX={c:['+25K','12%','150','3,500','70'],b:['+40K','18%','260','6,000','120'],o:['+55K','24%','360','8,000','150']};
+var CE=[['ن','النجمة','نجمة سعودية (1.2M)','سناب + إنستغرام',1200,'نوفمبر · الأسبوع 1','إطلاق المتجر وبوكس «روتيني» بالفئات الأربع',516],
+['ه','الموضة','مؤثرة موضة وإكسسوارات (700K)','تيك توك + إنستغرام',700,'نوفمبر · الأسبوع 2','الشنط والإكسسوارات وباقات الجمعة البيضاء',301],
+['ج','الجمال','مؤثرة جمال ومكياج (300K)','تيك توك + سناب',300,'نوفمبر · الأسبوع 3','مستحضرات التجميل وبوكس الجمال',129],
+['خ','الخبيرة','خبيرة عناية بالشعر (450K)','إنستغرام + تيك توك',450,'ديسمبر','زيوت الشعر وروتين الشتاء',194]];
+function fit(a,ratio){a=a.slice(0,M);while(a.length<M){var L=a[a.length-1],P=a.length>1?a[a.length-2]:L,nx;if(ratio){var g=P>0?L/P:1.1;g=Math.min(1.3,Math.max(1.03,1+(g-1)*0.7));nx=L*g}else{nx=L+Math.max((L-P)*0.85,Math.abs(L)*0.05)}a.push(Math.round(nx))}return a}
+for(var _k in D){D[_k].o=fit(D[_k].o,1);D[_k].r=fit(D[_k].r,1);D[_k].n=fit(D[_k].n,0)}
+function L1(){return M*30-1}
+function sum(a){return a.reduce(function(x,y){return x+y},0)}
+function tw(el,to,sfx){var t0=performance.now(),from=+el.dataset.v||0;el.dataset.v=to;(function s(t){var p=Math.min(1,(t-t0)/700),e=1-Math.pow(1-p,3);el.textContent=f(from+(to-from)*e)+(sfx||'');if(p<1)requestAnimationFrame(s)})(t0)}
+function det(m){return m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1])-m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0])+m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0])}
+function daily(T){var n=T.length,o=[],mid=function(i){return 30*i+15.5},val=function(i){return T[i]/30};for(var d=1;d<=30*n;d++){var i;if(n===1){o.push(val(0));continue}if(d<=mid(0))i=0;else if(d>=mid(n-1))i=n-2;else i=Math.min(n-2,Math.floor((d-15.5)/30));var t=(d-mid(i))/30;o.push(val(i)+(val(i+1)-val(i))*t)}for(var m=0;m<n;m++){var s0=0;for(var d2=30*m;d2<30*m+30;d2++)s0+=o[d2];var adj=(T[m]-s0)/30;for(var d3=30*m;d3<30*m+30;d3++)o[d3]+=adj}return o}
+function chart(v){
+ var W=640,H=240,pl=14,pr=10,pt=18,pb=28,mx=Math.max.apply(null,v),mn=Math.min(0,Math.min.apply(null,v));
+ var L=v.length-1,X=function(i){return pl+i*(W-pl-pr)/L},Y=function(y){return pt+(mx-y)/(mx-mn)*(H-pt-pb)};
+ var d=v.map(function(y,i){return(i?'L':'M')+X(i).toFixed(1)+' '+Y(y).toFixed(1)}).join(' ');
+ var h='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="var(--line)" stroke-width="2"/>';
+ for(var e=1;e<M;e++){var xd=30*e;h+='<line x1="'+X(xd)+'" x2="'+X(xd)+'" y1="'+pt+'" y2="'+(H-pb)+'" stroke="var(--gold)" stroke-dasharray="3 4" opacity=".7"/><text x="'+X(xd)+'" y="'+(e%2?pt-5:pt+8)+'" text-anchor="middle">'+MN[e]+'</text>'}
+ h+='<path d="'+d+' L'+X(L)+' '+Y(0)+' L'+X(0)+' '+Y(0)+'Z" fill="var(--rg)" opacity=".18"/><path d="'+d+'" fill="none" stroke="var(--rg)" stroke-width="3" stroke-linejoin="round"/>';
+ (function(){var st=Math.max(1,Math.ceil(M/4)),P=[[0,'يوم 1']];for(var e=st;e<M;e+=st)P.push([30*e-1,'يوم '+(30*e)]);P.push([L,'يوم '+(L+1)]);return P})().forEach(function(e){var an=e[0]===L?'end':(e[0]===0?'start':'middle');h+='<circle cx="'+X(e[0])+'" cy="'+Y(v[e[0]])+'" r="4" fill="var(--rg)"/><text x="'+X(e[0])+'" y="'+(H-8)+'" text-anchor="'+an+'">'+e[1]+'</text><text x="'+X(e[0])+'" y="'+(Y(v[e[0]])-8)+'" text-anchor="'+an+'" style="fill:var(--ink);font-weight:700">'+f(v[e[0]])+'</text>'});
+ document.getElementById('dl').innerHTML=h;
+}
+function render(k){
+ var d=D[k],R=sum(d.r),N=sum(d.n),O=sum(d.o),s=d.s,v=daily(d.n);
+ var K=[['أرباح الشهر الأول',d.n[0],' ر.س'],['صافي الربح '+PL,N,' ر.س'],['مبيعات '+PL,R,' ر.س'],['عدد الطلبات',O,'']];
+ document.getElementById('kpis').innerHTML=K.map(function(x,i){return'<div class="card kpi"><b id="k'+i+'"></b><span>'+x[0]+'</span></div>'}).join('');
+ K.forEach(function(x,i){tw(document.getElementById('k'+i),x[1],x[2])});
+ document.getElementById('hb').innerHTML=[['أرباح الشهر الأول'],['صافي الربح '+PL],['مبيعات '+PL]].map(function(x,i){return'<div><b id="h'+i+'"></b><span>'+x[0]+'</span></div>'}).join('');
+ [d.n[0],N,R].forEach(function(x,i){tw(document.getElementById('h'+i),x,' ر.س')});
+ chart(v);
+ var cs=[7,30],_st=Math.max(1,Math.ceil((M-1)/4));if(M===1)cs=[7,14,21,30];else{for(var _e=1+_st;_e<M;_e+=_st)cs.push(30*_e);cs.push(30*M)}var ac=0,cum=[];v.forEach(function(y,i){ac+=y;if(cs.indexOf(i+1)>=0)cum.push(ac)});
+ document.getElementById('cum').innerHTML='<tr><th>حتى اليوم</th>'+cs.map(function(c){return'<th class="n">'+c+'</th>'}).join('')+'</tr><tr><td>الربح التراكمي (ر.س)</td>'+cum.map(function(c){return'<td class="n'+(c<0?' neg':'')+'">'+f(c)+'</td>'}).join('')+'</tr>';
+ var mx=Math.max.apply(null,d.r);
+ document.getElementById('bars').style.gap=M>6?'10px':'';document.getElementById('bars').innerHTML=d.r.map(function(r,i){var n=d.n[i];return'<div class="col"><div class="pair"><div class="bar rev" style="height:'+(r/mx*185)+'px"><i>'+f(r/1000)+'K</i></div><div class="bar '+(n<0?'neg':'net')+'" style="height:'+Math.max(Math.abs(n)/mx*185,3)+'px"><i>'+(n<0?'-':'')+f(Math.abs(n)/1000)+'K</i></div></div></div>'}).join('');
+ var row=function(t,a,tot,neg){return'<tr><td>'+t+'</td>'+a.map(function(x){return'<td class="n'+(neg&&x<0?' neg':'')+'">'+f(x)+'</td>'}).join('')+'<td class="n"><b>'+f(tot)+'</b></td></tr>'};
+ document.getElementById('tbl').innerHTML='<tr><th></th>'+MN.map(function(m){return'<th class="n">'+m+'</th>'}).join('')+'<th class="n">المجموع</th></tr>'+row('الطلبات',d.o,O)+row('المبيعات (ر.س)',d.r,R)+row('صافي الربح (ر.س)',d.n,N,true);
+ var x=DX[k],co=0,cr=0,cp=0,celEl=document.getElementById('cel');
+ if(celEl) celEl.innerHTML=CE.map(function(c){var o=c[7]*s,sa=o*140,p=o*48-300;co+=o;cr+=sa;cp+=p;return'<div class="card cel"><div class="ava">'+c[0]+'</div><h3>'+c[1]+' · '+c[5]+'</h3><div class="fl">'+c[2]+'<br>'+c[3]+' · <b>'+f(c[4])+' ألف متابع</b></div><p style="font-size:14.5px;margin:8px 0 0">'+c[6]+'</p><div class="res"><div><b>'+f(o)+'</b><span>طلب</span></div><div><b>'+f(sa/1000)+'K</b><span>مبيعات ر.س</span></div><div><b class="pos">'+(Math.round(p/100)/10)+'K</b><span>ربح ر.س</span></div></div></div>'}).join('');
+ document.getElementById('goal').innerHTML='<h3>النتيجة التي نصل لها في نهاية الخطة ('+PL+')</h3><ul><li>أرباح يومية تصل إلى '+f(v[L1()])+' ر.س في اليوم الأخير (مقابل '+f(v[0])+' ر.س في اليوم الأول)، وفي صعود يومي</li><li>مبيعات شهرية '+f(d.r[M-1])+' ر.س وحوالي '+f(d.o[M-1])+' طلب في الشهر، وربح صافٍ '+f(d.n[M-1])+' ر.س</li>'+(celEl?'<li>المشاهير الأربعة يجلبون '+f(co)+' طلباً ومبيعات '+f(cr)+' ر.س وأرباحاً ≈ '+f(cp)+' ر.س</li>':'')+'<li>'+x[0]+' متابع جديد، و'+x[2]+' تقييماً حقيقياً، و'+x[3]+' زيارة شهرياً من البحث ('+x[4]+' كلمة في أول 20 نتيجة)</li><li>عملاء عائدون بنسبة '+x[1]+'، وقاعدة جاهزة لذروة رمضان</li></ul>';
+}
+document.getElementById('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(x){x.classList.remove('on')});b.classList.add('on');render(b.dataset.s)});
+render('b');
+</script>
+</body>
+</html>

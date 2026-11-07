@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>خطط شراع</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/app.css">
+<link rel="stylesheet" href="assets/css/quote.css">
+<link rel="stylesheet" href="assets/css/notice.css">
+<link rel="icon" href="assets/img/icon.png">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <img src="assets/img/logo-light.png" alt="شراع">
+    <div>
+      <h1>منشئ خطط العملاء</h1>
+      <div class="sub">خطة جاهزة للعميل في دقيقتين</div>
+    </div>
+    <div class="sp"></div>
+    <button type="button" class="keypill" id="keyBtn"><span class="dot"></span><span id="keyTxt">مفتاح Gemini</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+  <div class="modes" role="group" aria-label="نوع الملف">
+    <button type="button" id="modePlan" aria-pressed="true">خطة تسويقية</button>
+    <button type="button" id="modeApp" aria-pressed="false">خطة تطبيق</button>
+    <button type="button" id="modeQuote" aria-pressed="false">عرض سعر</button>
+    <button type="button" id="modeNotice" aria-pressed="false">إنذار سداد</button>
+    <button type="button" id="modeImages" aria-pressed="false">صور ← PDF</button>
+  </div>
+  <form id="q" novalidate hidden>
+    <section class="step">
+      <div class="step-h"><span class="step-n">1</span><h2>العميل</h2></div>
+      <div class="fld"><label for="qTo">مقدَّم إلى <span class="req">*</span></label>
+        <input type="text" id="qTo" autocomplete="off" placeholder="اسم المتجر أو الجهة"></div>
+      <div class="fld"><label for="qSite">رابط المتجر</label>
+        <input type="url" id="qSite" dir="ltr" autocomplete="off" placeholder="store.com"></div>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">2</span><h2>الباقات</h2><span class="hint">اضغط على الباقة (لحد 3)</span></div>
+      <div class="qpk" id="qPkgs"></div>
+      <div id="qPrices"></div>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">3</span><h2>الخدمات المشمولة</h2></div>
+      <div class="qsv" id="qSvcs"></div>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">4</span><h2>ميزة خاصة</h2><span class="hint">اختياري</span></div>
+      <div class="fld"><label for="qOfferT">العنوان</label><input type="text" id="qOfferT" autocomplete="off" placeholder="مثال: خصم إضافي لفترة محدودة"></div>
+      <div class="fld"><label for="qOfferX">التفاصيل</label><textarea id="qOfferX" placeholder="لو فاضي، الصندوق ده مش هيظهر في العرض"></textarea></div>
+    </section>
+    <div class="err" id="qErr" hidden></div>
+  </form>
+  <form id="n" novalidate hidden>
+    <section class="step">
+      <div class="step-h"><span class="step-n">1</span><h2>بيانات العميل (الطرف الثاني)</h2></div>
+      <div class="row2">
+        <div class="fld" style="grid-column:1/-1"><label for="nName">اسم العميل الكامل <span class="req">*</span></label>
+          <input type="text" id="nName" autocomplete="off" placeholder="مثال: راشد بن رشاد بن زايد المطيري"></div>
+        <div class="fld"><label for="nTitle">يُخاطَب بـ</label>
+          <select id="nTitle"><option value="السيد">السيد</option><option value="السيدة">السيدة</option><option value="">بدون لقب (منشأة)</option></select></div>
+        <div class="fld"><label for="nRep">الممثل النظامي</label>
+          <input type="text" id="nRep" autocomplete="off" placeholder="لو فاضي = اسم العميل"></div>
+        <div class="fld"><label for="nAddr">العنوان</label>
+          <input type="text" id="nAddr" autocomplete="off" value="المملكة العربية السعودية"></div>
+        <div class="fld"><label for="nEmail">البريد الإلكتروني</label>
+          <input id="nEmail" type="email" dir="ltr" autocomplete="off"></div>
+        <div class="fld"><label for="nCPhone">جوال العميل</label>
+          <input type="tel" id="nCPhone" dir="ltr" inputmode="tel" autocomplete="off" placeholder="اختياري"></div>
+        <div class="fld"><label for="nDocType">وثيقة العميل</label>
+          <select id="nDocType"><option value="وثيقة العمل الحر">وثيقة العمل الحر</option><option value="السجل التجاري">السجل التجاري</option><option value="الرقم الوطني الموحد">الرقم الوطني الموحد</option><option value="رقم الهوية">رقم الهوية</option></select></div>
+        <div class="fld"><label for="nDocNo">رقم الوثيقة</label>
+          <input type="text" id="nDocNo" dir="ltr" autocomplete="off" placeholder="اختياري، مثال: FL-123456789"></div>
+        <div class="fld" style="grid-column:1/-1"><label for="nSite">موقع أو متجر العميل</label>
+          <input type="text" id="nSite" dir="ltr" autocomplete="off" placeholder="اختياري"></div>
+      </div>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">2</span><h2>المبلغ والمهلة</h2></div>
+      <div class="row2">
+        <div class="fld"><label for="nAmount">المبلغ المستحق (ريال) <span class="req">*</span></label>
+          <input id="nAmount" type="number" min="1" step="1" inputmode="numeric" dir="ltr"></div>
+        <div class="fld"><label for="nDays">المهلة (أيام عمل)</label>
+          <input id="nDays" type="number" min="1" max="30" step="1" inputmode="numeric" dir="ltr" value="3"></div>
+      </div>
+      <span class="hint" id="nWords"></span>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">3</span><h2>بيانات الإنذار</h2></div>
+      <div class="row2">
+        <div class="fld"><label for="nDate">التاريخ</label><input id="nDate" type="date" dir="ltr"></div>
+        <div class="fld"><label for="nRef">رقم المرجع</label><input type="text" id="nRef" dir="ltr" autocomplete="off"></div>
+      </div>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">4</span><h2>الختم والتوقيع</h2></div>
+      <div class="sigs" role="radiogroup" aria-label="الختم والتوقيع" id="nSigs"></div>
+      <div class="fixed" style="margin:8px 0 0">اسم المؤسسة ورقمها في الإنذار بيتغيروا مع الختم اللي تختاره، عشان الإنذار يطلع باسم نفس الجهة اللي ختمت عليه.</div>
+    </section>
+    <div class="err" id="nErr" hidden></div>
+  </form>
+  <form id="im" novalidate hidden>
+    <section class="step">
+      <div class="step-h"><span class="step-n">1</span><h2>الصور</h2></div>
+      <label class="drop" id="imDrop" for="imFile">
+        <input type="file" id="imFile" accept="image/*" multiple>
+        <b>اسحب الصور هنا أو اضغط تختارها</b>
+        <span>أو انسخ صورة (سكرين شوت) واضغط Ctrl+V في الصفحة</span>
+      </label>
+      <ol class="imlist" id="imList"></ol>
+      <span class="hint" id="imCount"></span>
+    </section>
+    <section class="step">
+      <div class="step-h"><span class="step-n">2</span><h2>الشكل</h2></div>
+      <div class="seg seg2" role="radiogroup" aria-label="شكل الصفحات">
+        <input type="radio" name="imLayout" id="imStack" value="stack" checked><label for="imStack"><b>تحت بعض</b><span>صفحة واحدة طويلة</span></label>
+        <input type="radio" name="imLayout" id="imPages" value="pages"><label for="imPages"><b>صفحات A4</b><span>كل صورة في صفحة</span></label>
+      </div>
+      <label class="chk-row" for="imSep"><input type="checkbox" id="imSep" checked> <span>فاصل بين الصور</span></label>
+      <div class="fld" style="margin-top:10px"><label for="imName">اسم الملف</label>
+        <input type="text" id="imName" dir="ltr" autocomplete="off" placeholder="images"></div>
+    </section>
+    <div class="err" id="imErr" hidden></div>
+  </form>
+  <form id="f" novalidate>
+    <section class="step">
+      <div class="step-h"><span class="step-n">1</span><h2>المتجر</h2></div>
+      <div class="fld"><span class="lbl" id="pmLbl">نوع الخطة</span>
+        <div class="seg seg2" role="radiogroup" aria-labelledby="pmLbl">
+          <input type="radio" name="pmode" id="pmFast" value="fast" checked><label for="pmFast"><b>سريعة</b><span>حوالي دقيقة</span></label>
+          <input type="radio" name="pmode" id="pmVip" value="vip"><label for="pmVip"><b>VIP احترافية</b><span>2 لـ 4 دقايق، بتقرأ المتجر</span></label>
+        </div></div>
+      <div class="fld"><label for="url">رابط المتجر <span class="req">*</span></label>
+        <input type="url" id="url" name="url" dir="ltr" autocomplete="off" placeholder="https://store.com أو salla.sa/store-name">
+      </div>
+      <div class="fld"><label for="cat">نوع المنتجات <span class="req">*</span></label>
+        <select id="cat" name="cat"><option value="">اختار نوع المتجر</option></select>
+        <input type="text" id="catOther" name="catOther" autocomplete="off" placeholder="اكتب نوع المنتجات" hidden style="margin-top:6px"></div>
+      <div class="fld"><label for="storeName">اسم المتجر بالعربي <span class="req" id="nameReq">*</span></label>
+        <input type="text" id="storeName" name="storeName" autocomplete="off" placeholder="مثال: عود الريان">
+        <span class="hint" id="nameHint"></span></div>
+      <div class="fld"><label for="notes">أهداف العميل أو ملاحظات من المكالمة</label>
+        <textarea id="notes" name="notes" placeholder="مثال: عايز يزوّد المبيعات قبل رمضان، وحساب إنستجرام ضعيف"></textarea></div>
+    </section>
+
+    <section class="step" id="pkgStep">
+      <div class="step-h"><span class="step-n" id="pkgN">2</span><h2>الباقة</h2></div>
+      <div id="pkgSum"></div>
+      <div class="pkg-btns">
+        <button type="button" class="btn btn-main" id="pkgOpen">اختار من الباقات</button>
+        <button type="button" class="btn btn-ghost" id="pkgClear" hidden>بدون باقة (اختيار يدوي)</button>
+      </div>
+    </section>
+
+    <section class="step" id="durStep">
+      <div class="step-h"><span class="step-n" id="durN">3</span><h2>مدة الباقة</h2></div>
+      <div class="seg seg5" role="radiogroup" aria-label="مدة الباقة">
+        <input type="radio" name="dur" id="d1" value="1"><label for="d1"><b>1</b><span>شهر</span></label>
+        <input type="radio" name="dur" id="d3" value="3" checked><label for="d3"><b>3</b><span>شهور</span></label>
+        <input type="radio" name="dur" id="d4" value="4"><label for="d4"><b>4</b><span>شهور</span></label>
+        <input type="radio" name="dur" id="d6" value="6"><label for="d6"><b>6</b><span>شهور</span></label>
+        <input type="radio" name="dur" id="d12" value="12"><label for="d12"><b>12</b><span>شهر</span></label>
+      </div>
+    </section>
+
+    <section class="step" id="svcStep">
+      <div class="step-h"><span class="step-n" id="svcN">4</span><h2>الخدمات</h2></div>
+      <div class="fixed">المنصات ثابتة في كل الخطط: سناب شات، تيك توك، إنستجرام. الخدمة اللي مش مختارة قسمها بيتشال من الخطة.</div>
+      <div id="svcs"></div>
+      <div class="err" id="svcErr" hidden>اختار خدمة واحدة على الأقل.</div>
+    </section>
+
+    <section class="step">
+      <div class="step-h"><span class="step-n" id="tplN">4</span><h2>شكل الخطة</h2></div>
+      <div class="tpls" id="tpls" role="radiogroup" aria-label="شكل الخطة"></div>
+    </section>
+
+    <section class="step">
+      <div class="step-h"><span class="step-n" id="priceN">5</span><h2>السعر</h2></div>
+      <div class="row2">
+        <div class="fld"><label for="was">السعر قبل الخصم (ريال)</label>
+          <input type="number" id="was" name="was" min="0" step="1" inputmode="numeric" dir="ltr" placeholder="اختياري"></div>
+        <div class="fld"><label for="price">السعر بعد الخصم (ريال) <span class="req">*</span></label>
+          <input type="number" id="price" name="price" min="0" step="1" inputmode="numeric" dir="ltr"></div>
+      </div>
+      <div class="fixed" style="margin:0">طريقة الدفع في كل خطة: «مرة واحدة أو على دفعات حسب الاتفاق في العقد».</div>
+    </section>
+
+    <div class="err" id="formErr" hidden></div>
+    <div class="actions">
+      <button type="submit" class="btn btn-main" id="genBtn"><span id="genTxt">اكتب الخطة بـ Gemini</span></button>
+      <div class="prog" id="prog" hidden><i></i></div>
+    </div>
+  </form>
+  </div>
+
+  <section class="pv" aria-live="polite">
+    <div class="pv-bar">
+      <span class="t"><span id="pvName">معاينة الخطة</span> <span class="tag" id="exTag">القالب الأصلي</span></span>
+      <button type="button" class="btn btn-ghost" id="editBtn">تعديل النصوص</button>
+      <button type="button" class="btn btn-ghost" id="htmlBtn">تنزيل HTML</button>
+      <button type="button" class="btn btn-dark" id="pdfBtn">تنزيل PDF</button>
+    </div>
+    <div class="pv-hint" id="pvHint">ده شكل القالب الأصلي. اكتب رابط المتجر واضغط «اكتب الخطة»، وGemini هيعيد كتابة كل جملة فيه بتفاصيل المتجر.</div>
+    <div class="status" id="status" hidden></div>
+    <div class="frame-wrap" id="frameWrap"><div class="gen-ov" id="genOv" hidden><div class="gbox"><div class="gline"><i></i></div><b id="genOvT">بيكتب الخطة...</b><small class="gclock" id="genOvClock" dir="ltr">0:00</small><span id="genOvS"></span><div class="gbar"><i id="genOvBar"></i></div></div></div><iframe id="tplFrame" title="معاينة الخطة" sandbox="allow-scripts allow-same-origin allow-popups allow-modals"></iframe></div>
+    <div id="quoteView" hidden><div class="q-scale" id="qScale"></div></div>
+    <div id="noticeView" hidden><div class="n-scale" id="nScale"></div></div>
+    <div id="imagesView" hidden><div class="im-stack" id="imStackView"></div></div>
+  </section>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog" class="dlg" id="dlgForm">
+    <h3>مفتاح Gemini</h3>
+    <ol id="keyHelp">
+      <li>افتح <span dir="ltr">aistudio.google.com/apikey</span> واعمل مفتاح.</li>
+      <li>الصقه هنا مرة واحدة. بيتحفظ على الجهاز ده بس، ومش بيتبعت لأي حد غير Google.</li>
+    </ol>
+    <div class="fld" id="keyFld"><label for="keyIn">المفتاح</label>
+      <input type="password" id="keyIn" dir="ltr" autocomplete="off" placeholder="AIza..."></div>
+    <div class="fld"><label for="modelIn">الموديل</label>
+      <select id="modelIn" dir="ltr"></select>
+      <span class="hint">لو الموديل مش متاح، الأداة بتجرّب اللي بعده لوحدها.</span></div>
+    <div class="status" id="keyStatus" hidden></div>
+    <div class="btns">
+      <button type="button" class="btn btn-main" id="keySave">حفظ</button>
+      <button type="button" class="btn btn-ghost" id="keyTest">اختبار المفتاح</button>
+      <button type="button" class="btn btn-ghost" id="keyClear">مسح المفتاح</button>
+      <button type="button" class="btn btn-ghost" id="keyClose">إغلاق</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="pkgDlg" class="sheet" aria-labelledby="pkgTitle">
+  <div class="sheet-h"><b id="pkgTitle">الباقات المتاحة</b><button type="button" class="btn btn-ghost" id="pkgClose">إغلاق</button></div>
+  <div class="sheet-tools">
+    <input type="search" id="pkgSearch" placeholder="دوّر باسم الباقة أو عدد الشهور أو المشاهير" autocomplete="off">
+    <div class="pkg-filters" id="pkgFilters" role="group" aria-label="تصفية الباقات"></div>
+  </div>
+  <div class="pkg-list" id="pkgList"></div>
+</dialog>
+
+<div id="stage" aria-hidden="true" style="position:fixed;top:0;left:-30000px;pointer-events:none"></div>
+<div id="renderHost" aria-hidden="true"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/assets.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
